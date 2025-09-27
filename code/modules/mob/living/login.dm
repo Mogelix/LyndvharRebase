@@ -13,6 +13,7 @@
 //	update_tod_hud()
 	update_spd()
 
+	update_sight()
 //	if (client && (stat == DEAD))
 //		client.ghostize()
 

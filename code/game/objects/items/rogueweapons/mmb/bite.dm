@@ -96,8 +96,9 @@
 			nodmg = TRUE
 			next_attack_msg += span_warning("Armor stops the damage.")
 
+	var/datum/wound/caused_wound
 	if(!nodmg)
-		affecting.bodypart_attacked_by(BCLASS_BITE, dam2do, user, user.zone_selected, crit_message = TRUE)
+		caused_wound = affecting.bodypart_attacked_by(BCLASS_BITE, dam2do, user, user.zone_selected, crit_message = TRUE)
 	visible_message(span_danger("[user] bites [src]'s [parse_zone(user.zone_selected)]![next_attack_msg.Join()]"), \
 					span_userdanger("[user] bites my [parse_zone(user.zone_selected)]![next_attack_msg.Join()]"))
 
@@ -364,6 +365,8 @@
 
 	C.blood_volume = max(C.blood_volume-15, 0)
 	C.handle_blood()
+	if(HAS_TRAIT(user, TRAIT_HORDE))
+		user.adjust_hydration(8)
 
 	playsound(user.loc, 'sound/misc/drink_blood.ogg', 100, FALSE, -4)
 

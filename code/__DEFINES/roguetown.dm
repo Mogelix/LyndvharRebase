@@ -203,6 +203,7 @@ Balloon Alert / Floating Text defines
 	/datum/species/halforc,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
+	/datum/species/dullahan,\
 )
 
 #define RACES_ESTEEMED \
@@ -232,19 +233,14 @@ Balloon Alert / Floating Text defines
 
 #define RACES_DESPISED \
 	/datum/species/anthromorph,\
-	,\
 	/datum/species/goblinp,\
 	/datum/species/kobold,\
-	,\
 
 #define RACES_RESPECTED_UP list(RACES_RESPECTED, RACES_ESTEEMED)
 
-#define RACES_CONSTRUCT \
-	,\
+
 
 #define RACES_ALL_KINDS list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_CONSTRUCT, RACES_ESTEEMED)
-
-#define RACES_NO_CONSTRUCT list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_ESTEEMED)
 
 #define RACES_SHUNNED_UP list(RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_ESTEEMED)
 
