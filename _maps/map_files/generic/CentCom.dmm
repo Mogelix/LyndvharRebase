@@ -918,7 +918,7 @@
 /obj/item/flashlight/flare/torch/metal,
 /obj/item/flashlight/flare/torch/metal,
 /obj/item/flashlight/flare/torch/metal,
-/turf/open/floor/rogue/cobble,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_manor)
 "cU" = (
 /obj/structure/stairs,
@@ -1550,6 +1550,13 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cave/inhumen)
+"gN" = (
+/obj/structure/closet/crate/roguecloset,
+/obj/item/clothing/mask/cigarette/rollie,
+/obj/item/clothing/mask/cigarette/rollie,
+/obj/item/clothing/mask/cigarette/rollie,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/vampire_manor)
 "gP" = (
 /obj/structure/fluff/walldeco/chains,
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
@@ -2012,6 +2019,10 @@
 /obj/item/rogueweapon/flail/sflail,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
+"le" = (
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/vampire_manor)
 "lh" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/naturalstone,
@@ -2343,6 +2354,7 @@
 	},
 /obj/machinery/light/rogue/wallfire/candle/r,
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
+/obj/structure/fluff/walldeco/mona,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_manor)
 "oE" = (
@@ -2442,7 +2454,7 @@
 /area/rogue)
 "pc" = (
 /obj/structure/stairs,
-/turf/open/floor/rogue/cobble,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_manor)
 "pd" = (
 /obj/structure/flora/roguegrass/thorn_bush,
@@ -2492,14 +2504,9 @@
 /area/rogue/outdoors/woods)
 "pn" = (
 /obj/structure/table/wood/poor,
-/obj/item/cooking/platter/silver{
-	pixel_x = 6;
-	pixel_y = 10
-	},
-/obj/item/cooking/platter/silver{
-	pixel_y = -4
-	},
 /obj/machinery/light/rogue/wallfire/candle/l,
+/obj/item/cooking/platter/pewter,
+/obj/item/cooking/platter/pewter,
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/vampire_manor)
 "pp" = (
@@ -2602,6 +2609,10 @@
 /obj/item/clothing/wrists/roguetown/bracers/aalloy,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/vampire_manor)
+"ql" = (
+/obj/structure/chair/bench,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "qp" = (
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/rogue/dirt/ambush,
@@ -2864,6 +2875,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/vampire_manor)
+"th" = (
+/obj/structure/table/wood/poor/alt,
+/obj/item/candle/skull/lit,
+/obj/item/reagent_containers/glass/cup/aalloymug,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "tj" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -3647,6 +3664,10 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/woods)
+"Aq" = (
+/obj/structure/fluff/walldeco/serpflag,
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/vampire_manor)
 "As" = (
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/rogue/blocks,
@@ -4205,6 +4226,10 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cave/inhumen)
+"FV" = (
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/vampire_manor)
 "FW" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10
@@ -4265,6 +4290,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/vampire_manor)
+"Gt" = (
+/obj/structure/fermentation_keg/beer,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "Gv" = (
 /obj/structure/table/wood/fancy/red,
 /obj/item/candle/candlestick/gold/lit{
@@ -4452,7 +4481,6 @@
 /area/rogue/outdoors/woods)
 "Ij" = (
 /obj/structure/table/vtable/v2,
-/obj/structure/fluff/walldeco/mona,
 /obj/structure/vampire/scryingorb{
 	pixel_x = -14;
 	pixel_y = 9
@@ -4648,16 +4676,17 @@
 /turf/open/floor/rogue/rooftop/green/corner1/dirone,
 /area/rogue/indoors/eventarea)
 "Ka" = (
-/obj/structure/mannequin,
+/obj/structure/mannequin/male,
 /obj/item/clothing/suit/roguetown/armor/plate/aalloy,
 /obj/item/clothing/shoes/roguetown/boots/aalloy,
 /obj/item/clothing/neck/roguetown/gorget/aalloy,
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/aalloy,
 /obj/item/clothing/gloves/roguetown/plate/aalloy,
+/obj/machinery/light/rogue/wallfire/candle,
 /obj/item/clothing/under/roguetown/platelegs/aalloy,
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/aalloy,
 /obj/item/clothing/wrists/roguetown/bracers/aalloy,
-/turf/open/floor/rogue/tile/bfloorz,
+/turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_manor)
 "Kd" = (
 /turf/open/water/pond,
@@ -5515,13 +5544,13 @@
 	dir = 2;
 	icon_state = "largetable"
 	},
-/obj/item/reagent_containers/glass/cup/silver,
+/obj/item/reagent_containers/glass/cup/aalloygob,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/vampire_manor)
 "Sq" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /obj/structure/fluff/railing/border/east,
-/obj/structure/closet/crate/chest,
+/obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/vampire_manor)
 "St" = (
@@ -5735,10 +5764,7 @@
 "UA" = (
 /obj/structure/table/wood/poor,
 /obj/machinery/light/rogue/wallfire/candle/l,
-/obj/item/cooking/platter/silver{
-	pixel_x = 15;
-	pixel_y = 3
-	},
+/obj/item/cooking/platter/pewter,
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/vampire_manor)
 "UC" = (
@@ -5890,14 +5916,8 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/reagent_containers/glass/cup/wooden,
 /obj/item/reagent_containers/glass/cup/wooden,
-/obj/item/reagent_containers/glass/cup/silver{
-	name = "pewter goblet";
-	pixel_x = -11
-	},
-/obj/item/reagent_containers/glass/cup/silver{
-	name = "pewter goblet";
-	pixel_x = -11
-	},
+/obj/item/reagent_containers/glass/cup/aalloygob,
+/obj/item/reagent_containers/glass/cup/aalloygob,
 /obj/item/reagent_containers/glass/cup,
 /obj/item/reagent_containers/glass/cup,
 /obj/item/reagent_containers/glass/bowl,
@@ -5928,15 +5948,9 @@
 /obj/item/cooking/platter,
 /obj/item/cooking/platter/pewter,
 /obj/item/cooking/platter/pewter,
-/obj/item/reagent_containers/glass/bowl/silver{
-	pixel_x = 2
-	},
-/obj/item/reagent_containers/glass/bowl/silver{
-	pixel_x = 2
-	},
-/obj/item/reagent_containers/glass/bowl/silver{
-	pixel_x = 2
-	},
+/obj/item/reagent_containers/glass/bowl/iron,
+/obj/item/reagent_containers/glass/bowl/iron,
+/obj/item/reagent_containers/glass/bowl/aalloy,
 /obj/item/reagent_containers/glass/bowl/gold,
 /obj/item/reagent_containers/glass/bowl/gold,
 /obj/item/reagent_containers/glass/bowl/gold,
@@ -6153,6 +6167,10 @@
 "YX" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors/eventarea)
+"YZ" = (
+/obj/structure/fluff/walldeco/serpflag,
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/indoors/vampire_manor)
 "Zb" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/naturalstone,
@@ -16867,11 +16885,11 @@ vQ
 vQ
 dD
 Vu
-Vu
+Aq
 cL
 cL
 cL
-Vu
+Aq
 Vu
 dU
 dU
@@ -17911,7 +17929,7 @@ Vu
 Oc
 dx
 dx
-Vu
+Aq
 Vu
 Qa
 Qa
@@ -18415,7 +18433,7 @@ Vu
 Vu
 dR
 Vu
-Vu
+Aq
 Vu
 Vu
 dR
@@ -18692,7 +18710,7 @@ jc
 jc
 jc
 jc
-Vu
+Aq
 Vu
 Qa
 Qa
@@ -18945,7 +18963,7 @@ cS
 dR
 cS
 jZ
-cS
+YZ
 bO
 jc
 jc
@@ -19057,7 +19075,7 @@ IX
 dM
 CM
 ni
-Vu
+Aq
 eC
 bE
 dr
@@ -19082,7 +19100,7 @@ Bn
 Bn
 MI
 jc
-Ka
+bO
 Vu
 Vu
 Lj
@@ -19199,7 +19217,7 @@ Ia
 So
 cI
 Xz
-cS
+YZ
 bN
 cG
 cG
@@ -19314,7 +19332,7 @@ Qa
 Vu
 dM
 dM
-Vu
+Aq
 CM
 CM
 ci
@@ -19459,7 +19477,7 @@ Ia
 km
 cI
 Xz
-cS
+YZ
 bN
 cG
 cG
@@ -19577,7 +19595,7 @@ QX
 dM
 CM
 ni
-Vu
+Aq
 eC
 bE
 dr
@@ -19602,7 +19620,7 @@ bD
 bD
 Zq
 jc
-Ka
+bO
 Vu
 Vu
 Ft
@@ -19725,7 +19743,7 @@ cS
 dR
 cS
 jZ
-cS
+YZ
 bO
 jc
 jc
@@ -19992,7 +20010,7 @@ jc
 jc
 jc
 jc
-Vu
+Aq
 Vu
 Qa
 Qa
@@ -20096,8 +20114,8 @@ ra
 PP
 Vu
 cT
-CM
-CM
+Ba
+Ba
 Vu
 Vu
 Vu
@@ -20226,16 +20244,16 @@ ra
 PP
 Vu
 Vu
-CM
-CM
-bL
-CM
+Ba
+Ba
+le
+gN
 Vu
 Vu
 Vu
 dR
 Vu
-Vu
+Aq
 Vu
 Vu
 dR
@@ -20356,10 +20374,10 @@ ra
 PP
 PP
 dR
-CM
-CM
-CM
-CM
+Ba
+Ba
+Ba
+Ba
 Vu
 CM
 bL
@@ -20486,9 +20504,9 @@ ra
 PP
 PP
 Vu
-CM
-CM
-CM
+FV
+Ba
+Ba
 pc
 dR
 CM
@@ -20616,10 +20634,10 @@ ra
 PP
 bW
 Vu
-lL
-CM
-CM
-Vu
+Ka
+Ba
+Ba
+Aq
 Vu
 Zl
 ZC
@@ -20767,18 +20785,18 @@ Vu
 Vu
 Vu
 Vu
-Vu
+Aq
 XH
 dG
 xM
-Vu
+Aq
 Vu
 co
 Qa
 TL
 dV
 vQ
-vQ
+Gt
 dV
 vQ
 dV
@@ -21024,7 +21042,7 @@ Vu
 cN
 cN
 cN
-Vu
+Aq
 Vu
 zm
 dG
@@ -21037,7 +21055,7 @@ Vu
 Vu
 me
 dV
-vQ
+ql
 vQ
 dV
 vQ
@@ -21167,7 +21185,7 @@ bC
 cY
 RQ
 dV
-vQ
+th
 vQ
 dV
 vQ
