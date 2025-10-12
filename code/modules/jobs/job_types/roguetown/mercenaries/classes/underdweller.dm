@@ -49,7 +49,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	beltl = /obj/item/rogueweapon/stoneaxe/woodcut/pick
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+	beltr = /obj/item/flashlight/flare/torch/lantern/bronzelamptern
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/shield/heater
 	backpack_contents = list(
@@ -57,7 +57,8 @@
 		/obj/item/bomb = 2,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
 		/obj/item/rogueweapon/huntingknife = 1,
-		/obj/item/mundane/adventurer_kit = 1
+		/obj/item/mundane/adventurer_kit = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		)
 	H.merctype = 12
 
