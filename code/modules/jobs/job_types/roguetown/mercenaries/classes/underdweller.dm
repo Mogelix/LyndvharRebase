@@ -5,7 +5,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
 	outfit = /datum/outfit/job/roguetown/mercenary/underdweller
-	class_select_category = CLASS_CAT_RACIAL
+	class_select_category = CLASS_CAT_UNALIGNED
 	category_tags = list(CTAG_MERCENARY)
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_WEBWALK, TRAIT_HOMESTEAD_EXPERT)
 	subclass_stats = list(
