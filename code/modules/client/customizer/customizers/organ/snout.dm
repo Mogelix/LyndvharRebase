@@ -148,6 +148,12 @@
 		/datum/sprite_accessory/snout/front/scanidalt,
 		/datum/sprite_accessory/snout/front/scanidalt2,
 		/datum/sprite_accessory/snout/front/scanidalt3,
+		/datum/sprite_accessory/snout/lcanid,
+		/datum/sprite_accessory/snout/lcanidalt,
+		/datum/sprite_accessory/snout/scanid,
+		/datum/sprite_accessory/snout/scanidalt,
+		/datum/sprite_accessory/snout/scanidalt2,
+		/datum/sprite_accessory/snout/scanidalt3,
 		)	
 
 /datum/customizer/organ/snout/cervaline
@@ -169,6 +175,12 @@
 		/datum/sprite_accessory/snout/front/scanidalt,
 		/datum/sprite_accessory/snout/front/scanidalt2,
 		/datum/sprite_accessory/snout/front/scanidalt3,
+		/datum/sprite_accessory/snout/lcanid,
+		/datum/sprite_accessory/snout/lcanidalt,
+		/datum/sprite_accessory/snout/scanid,
+		/datum/sprite_accessory/snout/scanidalt,
+		/datum/sprite_accessory/snout/scanidalt2,
+		/datum/sprite_accessory/snout/scanidalt3,
 		)	
 
 /datum/customizer/organ/snout/rhaeteian
