@@ -152,6 +152,9 @@
 /obj/item/organ/ears/lupian
 	name = "lupian ears"
 
+/obj/item/organ/ears/capridae
+	name = "capridae ears"
+
 /obj/item/organ/ears/vulpkanin
 	name = "venardine ears"
 	accessory_type = /datum/sprite_accessory/ears/fox

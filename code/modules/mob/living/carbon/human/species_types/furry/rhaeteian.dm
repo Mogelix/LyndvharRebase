@@ -1,14 +1,22 @@
-/mob/living/carbon/human/species/dracon
-	race = /datum/species/dracon
+/mob/living/carbon/human/species/rhaeteian
+	race = /datum/species/rhaeteian
 
-/datum/species/dracon
-	name = "Draconae"
-	id = "dracon"
-	desc = "<b>Draconae</b><br>\
-	The Draconae are incredibly distinct from other races- save for the Zardmen. They harbor many traits of which could be seen in many depictions of “dragons”,  a mythical beast of extreme intelligence and power- likely as a result of their direct servitude to Dragons themselves before their mysterious disappearance. It is widely believed that they are the produced creation between Zardman offerings to these Dragons whom they worshipped as gods. When their masters vanished, they themselves became the masters. Greedy and mysterious, they come from the province of Calmirixia in the western frontiers of Lyndhardtia. Before they were conquered in Naexidor’s campaign, Calmirixia was its own independent fiefdom, where the Draconae were the ultimate masters over their Zardmen underlings due to their successful birth into the Draconae after being laid in the hatcheries. Those who would become Zardman would be seen as nothing more than slave chattel to be used as expendable resources. As such, the Draconae and Zardmen in Lyndhardtia naturally despise eachother, where Draconae’s who have Zardman children often commit infanticide, and vice versa for the Zardmen- a practice currently banned in the provincial areas. Due to this behavior the Draconae are very heavily disapproved of in Lyndhardtian society, and have been relegated to lower-end jobs and open hostilities at worst.<br>"
-	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	possible_ages = ALL_AGES_LIST
+/datum/species/rhaeteian
+	name = "Rhaeteian"
+	id = "rhaeteian"
+	desc = "<b>Rhaeteian</b><br>\
+	Residing in the southeastern regions of the expanse of the Ruby Throne, the Rhaeteian are an avian species of well-renowned trade and guile. This region, known as the Lafeuyet plateau, is a large peninsula shaped over centuries by the waves of the Splitstern Sea. These birds have called this place their home for centuries, and forged a vast economic wealth outwards from it. The Rhaeteian are some of the best mercantile folk in the entirety of Llewyn, serving in many courts exclusively as the stewards, bankers, or store owners and clerks. Their guile has also served them very adeptly with their wings, making great thieves and rogues. The Rhaeteian make up the bulk of some of the most infamous thieves’ guilds as majority members- much to their own dismay, sometimes- as it has netted them a rather strenuous relationship with some portions of upper Lyndhardtian society.<br>"
+	default_color = "444"
+	species_traits = list(
+		MUTCOLORS,
+		EYECOLOR,
+		LIPS,
+		HAIR,
+	)
+	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	attack_verb = "slash"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	possible_ages = ALL_AGES_LIST
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -28,30 +36,25 @@
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
 	enflamed_icon = "widefire"
-	attack_verb = "slash"
-	attack_sound = 'sound/blank.ogg'
-	miss_sound = 'sound/blank.ogg'
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears,
-		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/lizard,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/wild_tongue,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		ORGAN_SLOT_TAIL = /obj/item/organ/tail/lizard,
-		ORGAN_SLOT_SNOUT = /obj/item/organ/snout/lizard,
-		ORGAN_SLOT_TAIL_FEATURE = /obj/item/organ/tail_feature/lizard_spines,
-		ORGAN_SLOT_FRILLS = /obj/item/organ/frills/lizard,
-		ORGAN_SLOT_HORNS = /obj/item/organ/horns,
-		//ORGAN_SLOT_WINGS = /obj/item/organ/wings/dracon,
 		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
-		//ORGAN_SLOT_PENIS = /obj/item/organ/penis/tapered,
+		//ORGAN_SLOT_PENIS = /obj/item/organ/penis/knotted,
 		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
 		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
 		)
+	bodypart_features = list(
+		/datum/bodypart_feature/hair/head,
+		/datum/bodypart_feature/hair/facial,
+	)
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
@@ -59,22 +62,20 @@
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
-		/datum/customizer/organ/wings/dracon,
-		/datum/customizer/organ/tail/lizard,
-		/datum/customizer/organ/tail_feature/lizard_spines,
-		/datum/customizer/organ/snout/lizard,
-		/datum/customizer/organ/ears/lizard,
-		/datum/customizer/organ/frills/lizard,
-		/datum/customizer/organ/horns/humanoid,
+		/datum/customizer/organ/tail/rhaeteian,
+		/datum/customizer/organ/snout/rhaeteian,
+		/datum/customizer/organ/wings/rhaeteian,
+		/datum/customizer/organ/neck_feature/anthro,
 		/datum/customizer/organ/testicles/anthro,
-		/datum/customizer/organ/penis/anthro,
+		/datum/customizer/organ/penis/rhaeteian,
 		/datum/customizer/organ/breasts/animal,
-		/datum/customizer/organ/vagina/animal,
-		/datum/customizer/organ/ears/anthro,
-		)
+		/datum/customizer/organ/vagina/rhaeteian,
+	)
+
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
-		/datum/body_marking_set/bellyscale,
+		/datum/body_marking_set/belly,
+		/datum/body_marking_set/bellysocks,
 		/datum/body_marking_set/tiger,
 		/datum/body_marking_set/tiger_dark,
 		/datum/body_marking_set/gradient,
@@ -104,13 +105,11 @@
 		/datum/body_marking/tonage,
 		/datum/body_marking/spotted,
 		/datum/body_marking/nose,
+		/datum/body_marking/harlequin,
+		/datum/body_marking/harlequinreversed,
 		/datum/body_marking/bangs,
 		/datum/body_marking/bun,
 		/datum/body_marking/gradient,
-	)
-	languages = list(
-		/datum/language/common,
-		/datum/language/draconic
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
@@ -118,75 +117,76 @@
 		/datum/descriptor_choice/stature,
 		/datum/descriptor_choice/face,
 		/datum/descriptor_choice/face_exp,
-		/datum/descriptor_choice/scales,
+		/datum/descriptor_choice/skin_all,
 		/datum/descriptor_choice/voice,
-		/datum/descriptor_choice/prominent_one,
-		/datum/descriptor_choice/prominent_two,
-		/datum/descriptor_choice/prominent_three,
-		/datum/descriptor_choice/prominent_four,
+		/datum/descriptor_choice/prominent_one_wild,
+		/datum/descriptor_choice/prominent_two_wild,
+		/datum/descriptor_choice/prominent_three_wild,
+		/datum/descriptor_choice/prominent_four_wild,
 	)
 
-/datum/species/dracon/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+
+/datum/species/rhaeteian/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
-/datum/species/dracon/on_species_loss(mob/living/carbon/C)
+/datum/species/rhaeteian/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	UnregisterSignal(C, COMSIG_MOB_SAY)
 
-/datum/species/dracon/get_random_body_markings(list/passed_features)
-	return assemble_body_markings_from_set(GLOB.body_marking_sets_by_type[/datum/body_marking_set/bellyscale], passed_features, src)
+/datum/species/rhaeteian/check_roundstart_eligible()
+	return TRUE
 
-/datum/species/dracon/get_random_features()
+/datum/species/rhaeteian/qualifies_for_rank(rank, list/features)
+	return TRUE
+
+/datum/species/rhaeteian/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST
 	var/main_color
 	var/second_color
-	var/random = rand(1,9)
-	//Choose from a variety of draconic colors
+	var/third_color
+	var/random = rand(1,6)
 	switch(random)
 		if(1)
-			main_color = "e43900"
-			second_color = "ea673c"
+			main_color = "FFFFFF"
+			second_color = "333333"
+			third_color = "333333"
 		if(2)
-			main_color = "ea6f01"
-			second_color = "ea8e3c"
+			main_color = "FFFFDD"
+			second_color = "DD6611"
+			third_color = "AA5522"
 		if(3)
-			main_color = "eaa501"
-			second_color = "e7b43a"
+			main_color = "DD6611"
+			second_color = "FFFFFF"
+			third_color = "DD6611"
 		if(4)
-			main_color = "63d100"
-			second_color = "89d248"
+			main_color = "CCCCCC"
+			second_color = "FFFFFF"
+			third_color = "FFFFFF"
 		if(5)
-			main_color = "51aa01"
-			second_color = "70ae39"
+			main_color = "AA5522"
+			second_color = "CC8833"
+			third_color = "FFFFFF"
 		if(6)
-			main_color = "00b302"
-			second_color = "2eb62f"
-		if(7)
-			main_color = "02c33c"
-			second_color = "3ac664"
-		if(8)
-			main_color = "00c170"
-			second_color = "3fbf89"
-		if(9)
-			main_color = "00bc94"
-			second_color = "3cbea2"
+			main_color = "FFFFDD"
+			second_color = "FFEECC"
+			third_color = "FFDDBB"
 	returned["mcolor"] = main_color
 	returned["mcolor2"] = second_color
-	returned["mcolor3"] = second_color
+	returned["mcolor3"] = third_color
 	return returned
 
-/datum/species/dracon/random_name(gender,unique,lastname)
+/datum/species/rhaeteian/random_name(gender,unique,lastname)
 	var/randname
 	if(unique)
 		if(gender == MALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/names/roguetown/lizardm.txt") )
+				randname = pick( world.file2list("strings/names/roguetown/rhaeteianm.txt") )
 				if(!findname(randname))
 					break
 		if(gender == FEMALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/names/roguetown/lizardf.txt") )
+				randname = pick( world.file2list("strings/names/roguetown/rhaeteianf.txt") )
 				if(!findname(randname))
 					break
 	else
