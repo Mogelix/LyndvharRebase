@@ -60,7 +60,7 @@
 /datum/outfit/job/roguetown/zybantu/janissary/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zybantu
-	mask = /obj/item/clothing/mask/rogue/facemask/steel/hound
+	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	cloak = /obj/item/clothing/cloak/half/rider/red
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale
@@ -110,7 +110,7 @@
 /datum/outfit/job/roguetown/zybantu/dancer/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zybantu
-	mask = /obj/item/clothing/mask/rogue/facemask/steel/hound
+	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	cloak = /obj/item/clothing/cloak/half/rider/red
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zybantu

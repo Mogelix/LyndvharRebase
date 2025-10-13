@@ -117,7 +117,7 @@
 		switch(helmets_choice)
 			if("Hound Mask")
 				H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/roguehood/shalal/hijab/gallant, SLOT_HEAD, TRUE)
-				H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel/hound, SLOT_WEAR_MASK, TRUE)
+				H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel, SLOT_WEAR_MASK, TRUE)
 			if("Volfplate Helmet")
 				H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/volfplate, SLOT_HEAD, TRUE)
 				H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/roguehood/shalal/hijab/gallant, SLOT_WEAR_MASK, TRUE)

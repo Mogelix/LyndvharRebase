@@ -31,7 +31,7 @@
 
 /datum/outfit/job/roguetown/bandit/sawbones/pre_equip(mob/living/carbon/human/H)
 	..()
-	mask = /obj/item/clothing/mask/rogue/facemask/steel/hound
+	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	head = /obj/item/clothing/head/roguetown/roguehood/feld
 	neck = /obj/item/clothing/neck/roguetown/collar/feldcollar
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/feld
