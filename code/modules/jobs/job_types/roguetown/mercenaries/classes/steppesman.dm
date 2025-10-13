@@ -72,7 +72,7 @@
 		if("Humen")
 			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel/steppesman, SLOT_WEAR_MASK, TRUE)
 		if("Beast")
-			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel/steppesman/anthro, SLOT_WEAR_MASK, TRUE)
+			H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel/steppesman, SLOT_WEAR_MASK, TRUE)
 
 
 /datum/advclass/mercenary/steppesman/sapper
@@ -139,7 +139,7 @@
 			if("Humen")
 				H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel/steppesman, SLOT_WEAR_MASK, TRUE)
 			if("Beast")
-				H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel/steppesman/anthro, SLOT_WEAR_MASK, TRUE)
+				H.equip_to_slot_or_del(new /obj/item/clothing/mask/rogue/facemask/steel/steppesman, SLOT_WEAR_MASK, TRUE)
 
 
 /datum/advclass/mercenary/steppesman/archer
