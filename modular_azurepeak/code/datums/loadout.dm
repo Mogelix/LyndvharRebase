@@ -108,6 +108,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Papakha"
 	path = /obj/item/clothing/head/roguetown/papakha
 
+/datum/loadout_item/cookhat
+	name = "Chef Hat"
+	path = /obj/item/clothing/head/roguetown/cookhat
+
 //CLOAKS
 /datum/loadout_item/tabard
 	name = "Tabard"
@@ -363,6 +367,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/loincloth
 	name = "Loincloth"
 	path = /obj/item/clothing/under/roguetown/loincloth
+
+/datum/loadout_item/tribalrag
+	name = "Tribal Rags"
+	path = /obj/item/clothing/suit/roguetown/shirt/tribalrag
 
 /datum/loadout_item/spectacles
 	name = "Spectacles"
