@@ -75,7 +75,7 @@
 	id = /obj/item/clothing/neck/roguetown/psicross/pestra
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/feld
 	shirt = /obj/item/clothing/suit/roguetown/shirt/robe/monk
-	gloves = /obj/item/clothing/gloves/roguetown/leather/black
+	gloves = /obj/item/clothing/gloves/roguetown/eastgloves1
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/black
