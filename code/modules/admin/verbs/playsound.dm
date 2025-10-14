@@ -254,7 +254,7 @@ GLOBAL_LIST_INIT(ambience_files, list(
 	'sound/music/area/field.ogg',
 	'sound/music/area/forest.ogg',
 	'sound/music/area/magiciantower.ogg',
-	'sound/music/area/manorgarri.ogg',
+	'sound/music/area/newgarri.ogg',
 	'sound/music/area/sargoth.ogg',
 	'sound/music/area/septimus.ogg',
 	'sound/music/area/sewers.ogg',
