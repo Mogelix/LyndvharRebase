@@ -58,12 +58,12 @@
 			steps++
 			if(steps&2 == 2) // Hrrghn... Colonel, I'm trying to sneak around, but I'm dummy thicc, and the clap of my asscheeks keeps ALERTING THE GUARDS
 				playsound(C, pick(list('sound/misc/mat/thicc (1).ogg','sound/misc/mat/thicc (2).ogg','sound/misc/mat/thicc (3).ogg','sound/misc/mat/thicc (4).ogg')), 15 * volume)
-			if(steps >= 6)
+			if(steps >= 4)
 				steps = 0
 			return// uhm... stealth?
 	steps++
 
-	if(steps >= 6)
+	if(steps >= 4)
 		steps = 0
 
 	if(steps % 2)
