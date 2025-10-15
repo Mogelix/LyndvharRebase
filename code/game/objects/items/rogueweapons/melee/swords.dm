@@ -1336,7 +1336,7 @@
 
 /obj/item/rogueweapon/sword/rapier/silver
 	name = "silver rapier"
-	desc = "A basket-hilted rapier, fitted with a thin blade of pure silver. Immortalized by Rockhill's witch hunters, this weapon - though cumberstone in an untrained hand - is surprisingly adept at both parrying and riposting."
+	desc = "A basket-hilted rapier, fitted with a thin blade of pure silver. This weapon - though cumberstone in an untrained hand - is surprisingly adept at both parrying and riposting."
 	icon_state = "silverrapier"
 	sheathe_icon = "psyrapier"
 	max_integrity = 225

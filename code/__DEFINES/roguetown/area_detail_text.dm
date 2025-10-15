@@ -6,7 +6,7 @@
 #define DETAIL_TEXT_ABANDONED_HOT_SPRINGS ""
 
 // Draguipe Forest
-#define DETAIL_TEXT_DRAGUIPPE_FOREST ""
+#define DETAIL_TEXT_DRAGUIPPE_FOREST "The Draguippe is the coined name for the large and imposing forest that envelops most of this region of the Dunargi province. Well known for its rough terrain, valleys, and dense vegetation, it is a very dangerous location for the unprepared traveller to venture through, especially in these times."
 // Undergrove Caves
 #define DETAIL_TEXT_UNDERGROVE ""
 #define DETAIL_TEXT_UNDERGROVE_CAMP ""
@@ -14,17 +14,17 @@
 #define DETAIL_TEXT_SKELETON_CRYPT ""
 
 // Underdark
-#define DETAIL_TEXT_UNDERDARK ""
-#define DETAIL_TEXT_SOUTHERN_UNDERDARK "" 
-#define DETAIL_TEXT_MELTED_UNDERCITY ""
+#define DETAIL_TEXT_UNDERDARK "The term given for the vast cavernous regions dotted across the deep innards of Beowricke. Well-known for being the homelands of the Drow and many unique and alien fauna, it is one of the deadliest places in existence for anyone not familiar with it. The Underdweller Contractors are most famous for their expeditions into these caverns, though their success rate is unfathomably low."
+#define DETAIL_TEXT_SOUTHERN_UNDERDARK "The term given for the vast cavernous regions dotted across the deep innards of Beowricke. Well-known for being the homelands of the Drow and many unique and alien fauna, it is one of the deadliest places in existence for anyone not familiar with it. The Underdweller Contractors are most famous for their expeditions into these caverns, though their success rate is unfathomably low." 
+#define DETAIL_TEXT_MELTED_UNDERCITY "A nigh-destroyed region of the Underdark, filled with acid and ruined buildings. What exactly existed here before is completely unknown- you are likely one of the first people to set eyes on this that isn't a Drow."
 
 // Undercoast
 #define DETAIL_TEXT_UNDERCOAST ""
-#define DETAIL_TEXT_TEMPLE_SHATTERED_GOD ""
-#define DETAIL_TEXT_ORC_RUIN ""
+#define DETAIL_TEXT_TEMPLE_SHATTERED_GOD "A ramshackled and destroyed temple to an unknown deity, rife with danger and fortune."
+#define DETAIL_TEXT_ORC_RUIN "A ruin overrun and crawling with dangerous creechers."
 
 // Terrorbog
-#define DETAIL_TEXT_TERRORBOG ""
+#define DETAIL_TEXT_TERRORBOG "The Terrorbog is the name given to the southern swampland that borders the Draguippe. While the Draguippe itself is considered dangerous, the Terrorbog is considered nigh impassable due to its extremely hostile fauna, almost maze-like vegetation, and leech-infested murkwaters."
 
 // North Coast
 #define DETAIL_TEXT_NORTH_COAST ""
