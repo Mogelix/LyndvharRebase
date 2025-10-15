@@ -7,7 +7,7 @@
 //
 
 /area/rogue/indoors/town
-	name = "indoors"
+	name = "Lyndvhar"
 	icon_state = "town"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'

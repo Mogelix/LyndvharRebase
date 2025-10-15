@@ -458,7 +458,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	cell_area = TRUE
 
 /area/rogue/indoors/town/tavern
-	name = "tavern"
+	name = "The Fool's Flagon"
 	icon_state = "tavern"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
@@ -566,7 +566,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 ///// outside
 
 /area/rogue/outdoors/town
-	name = "outdoors"
+	name = "Lyndvhar"
 	icon_state = "town"
 	soundenv = 16
 	droning_sound = 'sound/music/area/townstreetsold.ogg'
