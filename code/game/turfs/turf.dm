@@ -49,7 +49,7 @@
 	var/break_sound = null //The sound played when a turf breaks
 	var/debris = null
 	var/break_message = null
-
+	hover_color = "#607d65"
 	var/neighborlay
 	var/neighborlay_list = list()
 	var/neighborlay_override

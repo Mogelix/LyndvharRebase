@@ -70,10 +70,7 @@
 		if(GLOB.credits_icons[credited]["vc"])
 			voicecolor=GLOB.credits_icons[credited]["vc"]
 	icon_state = credited
-	maptext = {"<span style='vertical-align:top; text-align:center;
-				color: #[voicecolor]; font-size: 100%;
-				text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
-				font-family: "Pterra";'>[credited] the [credited_title]</span>"}
+	maptext = MAPTEXT_CENTER("<span style='vertical-align:top;color:#[voicecolor]'> [credited] <br>The [credited_title]</span>")
 	creditee = credited
 	maptext_x = -32
 	maptext_y = 8

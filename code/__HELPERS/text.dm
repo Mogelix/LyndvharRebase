@@ -13,7 +13,6 @@
 /// Prepares a text to be used for maptext. Use this so it doesn't look hideous.
 #define MAPTEXT(text) {"<span class='maptext'>[##text]</span>"}
 
-
 /**
  * Pixel-perfect scaled fonts for use in the MAP element as defined in skin.dmf
  *
@@ -25,6 +24,12 @@
  * To use a step other than the default in the macro, specify it in a span style.
  * For example: MAPTEXT_PIXELLARI("<span style='font-size: 24pt'>Some large maptext here</span>")
  */
+
+/// Prepares text for maptext centered
+#define MAPTEXT_CENTER(text) {"<span class='maptext center'>[##text]</span>"}
+/// For flying text (like damage indicators).
+#define MAPTEXT_FLYUP(text)  {"<span class='flyuptext'>[##text]</span>"}
+
 /// Large size (ie: context tooltips) - Size options: 12pt 24pt.
 #define MAPTEXT_PIXELLARI(text) {"<span style='font-family: \"Pixellari\"; font-size: 12pt; -dm-text-outline: 1px black'>[##text]</span>"}
 
