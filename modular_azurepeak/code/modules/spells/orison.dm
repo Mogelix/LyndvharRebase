@@ -111,18 +111,16 @@
 			user.visible_message(span_notice("[user] reaches gently towards [thing], beads of light glimmering at [user.p_their()] fingertips..."), span_notice("Blessed [user.patron.name], I ask but for a light to guide the way..."))
 		else
 			user.visible_message(span_notice("[user] closes [user.p_their()] eyes and places a glowing hand upon [user.p_their()] chest..."), span_notice("Blessed [user.patron.name], I ask but for a light to guide the way..."))
-		
+
 		if (do_after(user, cast_time, target = thing))
 			var/mob/living/living_thing = thing
 			var/light_power = clamp(4 + (holy_skill - 3), 4, 7)
-			set_light_on()
 
 			if (living_thing.has_status_effect(/datum/status_effect/light_buff))
 				user.visible_message(span_notice("The holy light emanating from [living_thing] becomes brighter!"), span_notice("I feed further devotion into [living_thing]'s blessing of light."))
 			else
 				user.visible_message(span_notice("A gentle illumination suddenly blossoms into being around [living_thing]!"), span_notice("I grant [living_thing] a blessing of light."))
-
-			living_thing.apply_status_effect(/datum/status_effect/light_buff, light_power)
+			living_thing.apply_status_effect(/datum/status_effect/light_buff,light_power)
 
 			return light_devotion
 	else
@@ -161,7 +159,7 @@
 			to_chat(user, span_notice("I'm already empowered with divine thaumaturgy!"))
 			return
 	else
-		// make a light source flicker, and others around it within a radius	
+		// make a light source flicker, and others around it within a radius
 		if (istype(thing, /obj/machinery/light) || istype(thing, /obj/item/flashlight))
 			for (var/obj/maybe_light in view(3 + holy_skill, thing))
 				if (istype(maybe_light, /obj/machinery/light))
@@ -283,7 +281,7 @@
 		if (thing.reagents.holder_full())
 			to_chat(user, span_warning("[thing] is full."))
 			return
-		
+
 		user.visible_message(span_info("[user] closes [user.p_their()] eyes in prayer and extends a hand over [thing] as water begins to stream from [user.p_their()] fingertips..."), span_notice("I utter forth a plea to [user.patron.name] for succour, and hold my hand out above [thing]..."))
 
 		var/holy_skill = user.get_skill_level(attached_spell.associated_skill)

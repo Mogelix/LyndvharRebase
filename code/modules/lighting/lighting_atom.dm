@@ -44,9 +44,10 @@
 /atom/proc/update_light()
 	SHOULD_NOT_SLEEP(TRUE)
 
-	if(light_system != STATIC_LIGHT)
-		CRASH("update_light() for [src] with following light_system value: [light_system]")
-
+	switch(light_system)
+		if(STATIC_LIGHT, MOVABLE_LIGHT) //do nothing
+		else
+			CRASH("update_light() for [src] with following light_system value: [light_system]")
 	if (!light_power || !light_outer_range || !light_on) // We won't emit light anyways, destroy the light source.
 		QDEL_NULL(light)
 	else
