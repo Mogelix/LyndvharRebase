@@ -90,14 +90,14 @@
 			else if(used_title)
 				. = list(span_info("ø ------------ ø\n<img src=[headshot_link] width=100 height=100/>\nThis is <EM>[used_name]</EM>, \nThe [is_returning ? "returning " : ""][race_name] [used_title].  \nø ------------ ø"))
 			else
-				. = list(span_info("ø ------------ ø\n<img src=[headshot_link] width=100 height=100/>\nThis is the <EM>[used_name]</EM>, \nThe [race_name]. \nø ------------ ø"))
+				. = list(span_info("ø ------------ ø\n<img src=[headshot_link] width=100 height=100/>\nThis is the <EM>[used_name]</EM>, The [race_name]. \nø ------------ ø"))
 		else
 			if(display_as_wanderer)
 				. = list(span_info("ø ------------ ø\nThis is <EM>[used_name]</EM>, \n The wandering [race_name]. \nø ------------ ø"))
 			else if(used_title)
 				. = list(span_info("ø ------------ ø\nThis is <EM>[used_name]</EM>, \n The [is_returning ? "returning " : ""][race_name] [used_title]. \nø ------------ ø"))
 			else
-				. = list(span_info("ø ------------ ø\nThis is the <EM>[used_name]</EM>, \n The [race_name]. \nø ------------ ø"))
+				. = list(span_info("ø ------------ ø\nThis is the <EM>[used_name]</EM>, The [race_name]. \nø ------------ ø"))
 
 		if(HAS_TRAIT(src, TRAIT_DNR) && src != user)
 			if(HAS_TRAIT(src, TRAIT_DEATHSIGHT))
