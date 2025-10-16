@@ -36,9 +36,9 @@
 		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/axes = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/maces = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/whipsflails = SKILL_LEVEL_EXPERT,
-		/datum/skill/combat/shields = SKILL_LEVEL_EXPERT,
-		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/whipsflails = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/shields = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 
 	)
 	extra_context = "This subclass is race-limited to: Dark Elves Only."
@@ -48,8 +48,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather/black
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/shadowpants
-	backl = /obj/item/storage/backpack/rogue/satchel/black
-	head = /obj/item/clothing/neck/roguetown/chaincoif/full/black
+	backl = /obj/item/storage/backpack/rogue/satchel/short/black
 	backpack_contents = list(
 		/obj/item/roguekey/mercenary = 1, 
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1, 
@@ -59,20 +58,12 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/fluted/shadowplate
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/shadowrobe
 	gloves = /obj/item/clothing/gloves/roguetown/plate/shadowgauntlets
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/iron
 	mask = /obj/item/clothing/mask/rogue/facemask/shadowfacemask
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/chainmantle
+	neck = /obj/item/clothing/neck/roguetown/gorget
 	backr = /obj/item/rogueweapon/shield/tower/spidershield
 	beltr = /obj/item/rogueweapon/whip/spiderwhip
 	beltl = /obj/item/rope/chain
-
-	var/riding = list("I'm a spider rider (your pet with you)", "I walk on my legs (+1 for athletics)")
-	var/ridingchoice = input(H, "Choose your faith", "FAITH") as anything in riding
-	switch(ridingchoice)
-		if("I'm a spider rider (your pet with you)")
-			l_hand = /obj/item/bait/spider
-		if("I walk on my legs (+1 for athletics)")
-			H.adjust_skillrank_up_to(/datum/skill/misc/athletics, SKILL_LEVEL_MASTER, TRUE)
 
 	H.merctype = 15
 
@@ -104,8 +95,8 @@
 		/datum/skill/misc/lockpicking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/bows = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/crossbows = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT,
-		/datum/skill/combat/knives = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/sewing = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/cooking = SKILL_LEVEL_NOVICE,
@@ -120,7 +111,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless/shadowgloves/elflock
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
 	mask = /obj/item/clothing/mask/rogue/shepherd/shadowmask/delf
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/chainmantle
+	neck = /obj/item/clothing/neck/roguetown/gorget
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/short
 	beltr = /obj/item/quiver/poisonarrows
 	beltl = /obj/item/rogueweapon/scabbard/sword
