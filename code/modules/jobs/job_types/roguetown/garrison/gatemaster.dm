@@ -6,22 +6,17 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_FEARED_UP
-	disallowed_races = list(
-		/datum/species/lamia,
-	)
-	allowed_patrons = ALL_DIVINE_PATRONS
+	allowed_races = RACES_SHUNNED_UP
+	allowed_patrons = ALL_NICE_PATRONS
 	tutorial = "Tales speak of the Gatemaster's legendary ability to stand still at a gate and ask people questions."
 	display_order = JDO_GATEMASTER
-
-	outfit = /datum/outfit/job/roguetown/gatemaster
 	advclass_cat_rolls = list(CTAG_GATEMASTER = 20)
 	give_bank_account = 3
 	min_pq = 4
 	max_pq = null
 	round_contrib_points = 3
 
-	cmode_music = 'sound/music/combat_guard.ogg'
+	cmode_music = 'sound/music/combat_garrison.ogg'
 
 	job_traits = list(TRAIT_GUARDSMAN, TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR)
 	job_subclasses = list(
@@ -30,11 +25,6 @@
 
 /datum/job/roguetown/gatemaster/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
-	if(ishuman(L))
-		var/mob/living/carbon/human/H = L
-		H.advsetup = 1
-		H.invisibility = INVISIBILITY_MAXIMUM
-		H.become_blind("advsetup")
 
 /datum/advclass/gatemaster
 	name = "Gatemaster"
@@ -49,10 +39,11 @@
 	)
 
 	subclass_skills = list(
-		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/maces = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/polearms = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/shields = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/combat/maces = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/crossbows = SKILL_LEVEL_MASTER,
 		/datum/skill/combat/bows = SKILL_LEVEL_NOVICE,
 		/datum/skill/combat/slings = SKILL_LEVEL_NOVICE,
@@ -68,25 +59,25 @@
 
 /datum/outfit/job/roguetown/gatemaster
 	name = "Gatemaster"
-	has_loadout = TRUE
+	has_loadout = FALSE
 	jobtype = /datum/job/roguetown/gatemaster
 	job_bitflag = BITFLAG_GARRISON
+	backpack_contents = list(/obj/item/signal_horn = 1, /obj/item/rope/chain = 1, /obj/item/storage/keyring/guardcastle, /obj/item/rogueweapon/huntingknife/idagger/steel = 1,  /obj/item/rogueweapon/scabbard/sheath = 1)
 
 /datum/outfit/job/roguetown/gatemaster/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/red
-	neck = /obj/item/clothing/neck/roguetown/gorget
+	mask = /obj/item/clothing/mask/rogue/facemask/steel
+	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/chainlegs
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather/black
-	beltl = /obj/item/storage/keyring/guardcastle
+	beltl = /obj/item/rogueweapon/knuckles
 	beltr = /obj/item/quiver/bolts
-	backr = /obj/item/storage/backpack/rogue/satchel/black
+	backr = /obj/item/storage/backpack/rogue/satchel/short/black
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	id = /obj/item/scomstone/bad/garrison
-	backpack_contents = list(/obj/item/rope/chain = 1)
