@@ -50,7 +50,7 @@
 			p.client.mouseovertext.movethis(PM, TRUE)
 		else
 			p.client.mouseovertext.movethis(PM)
-		p.client.mouseovertext.maptext = {"<span style='font-size:8pt;font-family:"Pterra";color:#ddd7df;text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;' class='center maptext '>[name]"}
+		p.client.mouseovertext.maptext = MAPTEXT_CENTER("<span style='color:[hover_color]'>[name]</span>")
 		p.client.screen |= p.client.mouseovertext
 	return TRUE
 
@@ -79,12 +79,11 @@
 		if(((rotation_structure && rotation_network)) && (HAS_TRAIT(p, TRAIT_ENGINEERING_GOGGLES))) //changing this to just look at rotations and removing the trait, users just need over 3 engineering.
 			var/rotation_chat = return_rotation_chat(p.client.mouseovertext)
 			p.client.mouseovertext.maptext_width = 96
-			p.client.mouseovertext.maptext = {"[rotation_chat]
-			<span style='font-size:8pt;font-family:"Pterra";color:#ddd7df;text-shadow:0 0 1px #fff, 0 0 2px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;' class='center maptext '>[name]"}
+			p.client.mouseovertext.maptext = MAPTEXT_CENTER("<span style='color:#e6b120'>[rotation_chat]</span> <br> <span style='color:[hover_color]'>[name]</span>")
 		else
 			p.client.mouseovertext.maptext_height = 32
 			p.client.mouseovertext.maptext_width = 96
-			p.client.mouseovertext.maptext = {"<span style='font-size:8pt;font-family:"Pterra";color:#ddd7df;text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;' class='center maptext '>[name]"}
+			p.client.mouseovertext.maptext = MAPTEXT_CENTER("<span style='color:[hover_color]'>[name]</span>")
 
 /atom/proc/return_rotation_chat(atom/movable/screen/movable/mouseover/mouseover)
 	return
@@ -136,7 +135,7 @@
 		if(offset_x < 1 || offset_x > 15 || offset_y < 1 || offset_x > 15)
 			return FALSE
 		var/list/PM = list("screen-loc" = "[offset_x]:0,[offset_y]:0")
-		p.client.mouseovertext.maptext = {"<span style='font-size:8pt;font-family:"Pterra";color:#607d65;text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;' class='center maptext '>[name]"}
+		p.client.mouseovertext.maptext = MAPTEXT_CENTER("<span style='color:[hover_color]'>[name]</span>")
 		p.client.mouseovertext.movethis(PM)
 		p.client.screen |= p.client.mouseovertext
 	return TRUE
@@ -159,7 +158,7 @@
 		var/offset_x = 8 - (p.x - x)
 		var/offset_y = 8 - (p.y - y)
 		var/list/PM = list("screen-loc" = "[offset_x]:0,[offset_y]:0")
-		p.client.mouseovertext.maptext = {"<span style='font-size:8pt;font-family:"Pterra";color:#6b3f3f;text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;' class='center maptext '>[name]"}
+		p.client.mouseovertext.maptext = MAPTEXT_CENTER("<span style='color:[hover_color]'>[name]</span>")
 		p.client.mouseovertext.movethis(PM)
 		p.client.screen |= p.client.mouseovertext
 	return TRUE
@@ -185,13 +184,13 @@
 		var/offset_x = 8 - (p.x - x)
 		var/offset_y = 8 - (p.y - y)
 		var/list/PM = list("screen-loc" = "[offset_x]:0,[offset_y]:0")
-		var/mousecolor = "#c1aaaa"
+		hover_color = "#c1aaaa"
 		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
 			if(H.voice_color)
 				if(H.name == H.real_name)
-					mousecolor = "#[H.voice_color]"
-		p.client.mouseovertext.maptext = {"<span style='font-size:8pt;font-family:"Pterra";color:[mousecolor];text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;' class='center maptext '>[name]"}
+					hover_color = "#[H.voice_color]"
+		p.client.mouseovertext.maptext = MAPTEXT_CENTER("<span style='color:[hover_color]'>[name]</span>")
 		p.client.mouseovertext.movethis(PM)
 		p.client.screen |= p.client.mouseovertext
 	return TRUE
@@ -213,7 +212,7 @@
 	icon_state = null
 	maptext = "MOUSEOVER"
 	maptext_width = 96
-	alpha = 150
+	alpha = 180
 
 /atom/movable/screen/movable/mouseover/proc/movethis(list/PM, hudobj = FALSE)
 	if(locked) //no! I am locked! begone!

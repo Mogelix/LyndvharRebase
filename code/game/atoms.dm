@@ -98,6 +98,10 @@
 	///Default pixel y shifting for the atom's icon.
 	var/base_pixel_y = 0
 
+	/// This means that the mouse over text will not be displayed when the mouse is over this atom
+	var/no_over_text = FALSE 
+	var/hover_color = "#a1bac4"
+
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
