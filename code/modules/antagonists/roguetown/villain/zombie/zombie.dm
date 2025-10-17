@@ -70,8 +70,9 @@
 	)
 
 /datum/antagonist/zombie/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
-	if(istype(examined_datum, /datum/antagonist/vampire))
-		if(!SEND_SIGNAL(examined_datum.owner, COMSIG_DISGUISE_STATUS))
+	if(istype(examined_datum, /datum/antagonist/vampirelord))
+		var/datum/antagonist/vampirelord/V = examined_datum
+		if(!V.disguised)
 			return span_boldnotice("Another deadite.")
 	if(istype(examined_datum, /datum/antagonist/zombie))
 		var/datum/antagonist/zombie/fellow_zombie = examined_datum
@@ -402,7 +403,7 @@
 /mob/living/carbon/human/proc/zombie_check_can_convert()
 	if(!mind)
 		return
-	if(mind.has_antag_datum(/datum/antagonist/vampire))
+	if(mind.has_antag_datum(/datum/antagonist/vampirelord))
 		return
 	if(mind.has_antag_datum(/datum/antagonist/werewolf))
 		return

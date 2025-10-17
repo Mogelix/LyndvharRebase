@@ -243,8 +243,6 @@
 		affecting.bodypart_attacked_by(BCLASS_BLUNT, damage, user, BODY_ZONE_CHEST)
 	playsound(target, 'sound/combat/hits/kick/kick.ogg', 100, TRUE, -1)
 	target.lastattacker = user.real_name
-	target.lastattackerckey = user.ckey
-	target.lastattacker_weakref = WEAKREF(user)
 	if(target.mind)
 		target.mind.attackedme[user.real_name] = world.time
 	user.stamina_add(15)

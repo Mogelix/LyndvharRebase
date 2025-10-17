@@ -56,7 +56,10 @@
 	if(istype(examined_datum, /datum/antagonist/werewolf))
 		return span_boldnotice("An elder lupine kin.")
 	if(examiner.Adjacent(examined))
-		if(istype(examined_datum, /datum/antagonist/vampire))
+		if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
+			if(transformed)
+				return span_boldwarning("A lesser Vampire.")
+		if(istype(examined_datum, /datum/antagonist/vampirelord))
 			if(transformed)
 				return span_boldwarning("An Ancient Vampire. I must be careful!")
 
@@ -99,7 +102,7 @@
 /mob/living/carbon/human/proc/can_werewolf()
 	if(!mind)
 		return FALSE
-	if(mind.has_antag_datum(/datum/antagonist/vampire))
+	if(mind.has_antag_datum(/datum/antagonist/vampirelord))
 		return FALSE
 	if(mind.has_antag_datum(/datum/antagonist/werewolf))
 		return FALSE
@@ -140,7 +143,7 @@
 		if(target.mind.has_antag_datum(/datum/antagonist/zombie))
 			to_chat(src, span_warning("I should not feed on rotten flesh."))
 			return
-		if(target.mind.has_antag_datum(/datum/antagonist/vampire))
+		if(target.mind.has_antag_datum(/datum/antagonist/vampirelord))
 			to_chat(src, span_warning("I should not feed on corrupted flesh."))
 			return
 		if(target.mind.has_antag_datum(/datum/antagonist/werewolf))

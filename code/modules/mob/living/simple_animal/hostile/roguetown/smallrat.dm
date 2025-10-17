@@ -20,15 +20,16 @@
 
 /obj/item/reagent_containers/food/snacks/smallrat/onbite(mob/living/carbon/human/user)
 	if(loc == user)
-		if(user.mind && user.mind.has_antag_datum(/datum/antagonist/vampire))
+		if(user.mind && user.mind.has_antag_datum(/datum/antagonist/vampirelord))
 			if(dead)
 				to_chat(user, span_warning("It's dead."))
 				return
+			var/datum/antagonist/vampirelord/VD = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
 			if(do_after(user, 30, target = src))
 				user.visible_message(span_warning("[user] drinks from [src]!"),\
 				span_warning("I drink from [src]!"))
 				playsound(user.loc, 'sound/misc/drink_blood.ogg', 100, FALSE, -4)
-				user.adjust_bloodpool(50)
+				VD.handle_vitae(50)
 				dead = TRUE
 				playsound(get_turf(user), 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
 				icon_state = "srat1"

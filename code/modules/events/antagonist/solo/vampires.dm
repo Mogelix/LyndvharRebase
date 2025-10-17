@@ -20,7 +20,7 @@
 	earliest_start = 0 SECONDS
 
 	typepath = /datum/round_event/antagonist/solo/vampire
-	antag_datum = /datum/antagonist/vampire
+	antag_datum = /datum/antagonist/vampirelord
 
 	restricted_roles = list(
 		"Viscount",
@@ -64,8 +64,7 @@
 		var/datum/job/J = SSjob.GetJob(antag_mind.current?.job)
 		J?.current_positions = max(J?.current_positions-1, 0)
 		antag_mind.current.unequip_everything()
-		var/datum/antagonist/vampire/lord/lorde = new /datum/antagonist/vampire/lord()
-		antag_mind.add_antag_datum(lorde)
+		antag_mind.add_antag_datum(antag_datum)
 		leader = TRUE
 		return
 	else
@@ -73,6 +72,5 @@
 			var/datum/job/J = SSjob.GetJob(antag_mind.current?.job)
 			J?.current_positions = max(J?.current_positions-1, 0)
 			antag_mind.current.unequip_everything()
-			var/datum/antagonist/vampire/servante = new /datum/antagonist/vampire(forced_clan = null, generation = GENERATION_ANCILLAE)
-			antag_mind.add_antag_datum(servante)
+			antag_mind.add_antag_datum(/datum/antagonist/vampirelord/lesser)
 			return

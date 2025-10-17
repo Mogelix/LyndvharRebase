@@ -4,8 +4,6 @@
 #define MAX_PLANT_WEEDS 100
 #define SOIL_DECAY_TIME 10 MINUTES
 
-GLOBAL_LIST_EMPTY(soil_list)
-
 /obj/structure/soil
 	name = "soil"
 	desc = "Dirt, ready to give life like a womb."
@@ -44,14 +42,6 @@ GLOBAL_LIST_EMPTY(soil_list)
 	var/soil_decay_time = SOIL_DECAY_TIME
 	///The time remaining in which the soil was given special fertilizer, effect is similar to being blessed but with less beneficial effects
 	var/fertilized_time = 0
-
-/obj/structure/soil/Initialize()
-	. = ..()
-	GLOB.soil_list += src
-
-/obj/structure/soil/Destroy()
-	GLOB.soil_list -= src
-	return ..()
 
 /obj/structure/soil/Crossed(atom/movable/AM)
 	. = ..()
