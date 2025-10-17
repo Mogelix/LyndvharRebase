@@ -56,7 +56,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = 'sound/music/area/banditcamp.ogg'
 	droning_sound_night = 'sound/music/area/banditcamp.ogg'
 
-/area/rogue/indoors/vampire_manor
+/area/rogue/indoors/vampire_lair
 	name = "Vampire Manor"
 	droning_sound = 'sound/music/area/manor2.ogg'
 

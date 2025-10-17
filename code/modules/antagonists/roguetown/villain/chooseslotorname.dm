@@ -20,7 +20,7 @@
 
 	choices += "Choose A Name"
 
-	var/choice = tgui_input_list(src, "Would you like to play as one of your characters or choose a name yourself?","CHOOSE A HERO", choices)
+	var/choice = browser_input_list(src, "Would you like to play as one of your characters or choose a name yourself?","CHOOSE A HERO", choices)
 	if(QDELETED(src))
 		return
 
