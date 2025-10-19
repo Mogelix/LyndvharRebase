@@ -2,7 +2,7 @@
 	name = "Iconoclast"
 	tutorial = "You uphold and spread the gospel of the Archdaemon MATTHIOS. Take from the wealthy, take from the worthless, empower yourself. Others of the cult will look up to you, in search of your guidance. Be the Bandit King that you know you can be.."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 	outfit = /datum/outfit/job/roguetown/bandit/iconoclast
 	category_tags = list(CTAG_BANDIT)
 	maximum_possible_slots = 1 // We only want one of these.

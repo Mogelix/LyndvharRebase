@@ -41,6 +41,9 @@
 
 	check_cremation()
 
+	if(HAS_TRAIT(src, TRAIT_IN_FRENZY))
+		handle_automated_frenzy()
+
 	if(stat != DEAD)
 		return 1
 
@@ -132,9 +135,9 @@
 /mob/living/proc/handle_inwater()
 	extinguish_mob()
 
-/mob/living/carbon/handle_inwater()
+/mob/living/carbon/handle_inwater(turf/onturf, extinguish = TRUE, force_drown = FALSE)
 	..()
-	if(!(mobility_flags & MOBILITY_STAND))
+	if(!(mobility_flags & MOBILITY_STAND) || force_drown)
 		if(HAS_TRAIT(src, TRAIT_NOBREATH) || HAS_TRAIT(src, TRAIT_WATERBREATHING))
 			return TRUE
 		if(stat == DEAD && client)
@@ -143,15 +146,15 @@
 		adjustOxyLoss(drown_damage)
 		emote("drown")
 
-/mob/living/carbon/human/handle_inwater()
+/mob/living/carbon/human/handle_inwater(turf/onturf, extinguish = TRUE, force_drown = FALSE)
 	. = ..()
-	if(istype(loc, /turf/open/water/bath))
+	if(istype(onturf, /turf/open/water/bath))
 		if(!wear_armor && !wear_shirt && !wear_pants)
 			add_stress(/datum/stressevent/bathwater)
 
-/mob/living/carbon/human/handle_inwater()
+/mob/living/carbon/human/handle_inwater(turf/onturf, extinguish = TRUE, force_drown = FALSE)
 	. = ..()
-	if(istype(loc, /turf/open/water/sewer))
+	if(istype(onturf, /turf/open/water/sewer))
 		add_stress(/datum/stressevent/sewertouched)
 
 /mob/living/carbon/proc/get_complex_pain()
@@ -551,10 +554,13 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 */
 
 /mob/living/carbon/proc/handle_sleep()
-	if(HAS_TRAIT(src, TRAIT_NOSLEEP) && !(mobility_flags & MOBILITY_STAND))
-		energy_add(5)
-		if(mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-			energy_add(10)
+	if(HAS_TRAIT(src, TRAIT_NOSLEEP))
+		if(!(mobility_flags & MOBILITY_STAND))
+			energy_add(5)
+		if(mind?.has_antag_datum(/datum/antagonist/vampire))
+			if(!(mobility_flags & MOBILITY_STAND))
+				energy_add(10)
+			energy_add(4)
 		if(!has_status_effect(/datum/status_effect/restrained/buckled))
 			return
 	//Healing while sleeping in a bed

@@ -12,7 +12,6 @@
 	var/base_state = "window-solid"
 	var/lockdir = 0
 	var/brokenstate = 0
-	var/prystrength = 100
 	blade_dulling = DULLING_BASHCHOP
 	pass_flags = LETPASSTHROW
 	climb_time = 20
@@ -20,6 +19,7 @@
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
 	break_sound = "glassbreak"
 	destroy_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
+	var/window_lock_strength
 
 /obj/structure/roguewindow/Initialize()
 	update_icon()
@@ -72,6 +72,7 @@
 	opacity = TRUE
 	max_integrity = 200
 	integrity_failure = 0.5
+	window_lock_strength = 100
 
 /obj/structure/roguewindow/openclose/OnCrafted(dirin)
 	dir = turn(dirin, 180)
@@ -88,6 +89,7 @@
 	base_state = "reinforcedwindow"
 	max_integrity = 800
 	integrity_failure = 0.1
+	window_lock_strength = 150
 
 /obj/structure/roguewindow/openclose/reinforced/OnCrafted(dirin)
 	dir = turn(dirin, 180)
@@ -163,66 +165,11 @@
 		else
 			icon_state = "w-[base_state]"
 
-/obj/structure/roguewindow/openclose/attackby(obj/item/attacking_item, mob/user, params)
-	if(istype(attacking_item, /obj/item/rogueweapon/huntingknife/idagger) && !climbable && !user.cmode)
-		to_chat(user, span_notice("I start trying to pry the window open..."))
-		var/lockprogress = 0
-		var/locktreshold = prystrength
-
-		var/obj/item/rogueweapon/huntingknife/idagger/P = attacking_item
-		var/mob/living/L = user
-
-		var/pickskill = user.get_skill_level(/datum/skill/misc/lockpicking)
-		var/perbonus = L.STAPER/5
-		var/picktime = 70
-		var/pickchance = 35
-		var/moveup = 10
-
-		picktime -= (pickskill * 10)
-		picktime = clamp(picktime, 10, 70)
-
-		moveup += (pickskill * 3)
-		moveup = clamp(moveup, 10, 30)
-
-		pickchance += pickskill * 10
-		pickchance += perbonus
-		pickchance *= P.picklvl
-		pickchance = clamp(pickchance, 1, 95)
-
-
-		while(!QDELETED(attacking_item) &&(lockprogress < locktreshold))
-			if(!do_after(user, picktime, target = src))
-				break
-			if(prob(pickchance))
-				lockprogress += moveup
-				playsound(src.loc, pick('sound/items/pickgood1.ogg','sound/items/pickgood2.ogg'), 5, TRUE)
-				to_chat(user, "<span class='warning'>Click...</span>")
-				if(L.mind)
-					add_sleep_experience(L, /datum/skill/misc/lockpicking, L.STAINT/2)
-				if(lockprogress >= locktreshold)
-					to_chat(user, "<span class='deadsay'>The locking mechanism gives.</span>")
-					if(ishuman(user))
-						var/mob/living/carbon/human/H = user
-						log_admin("[H.real_name]([key_name(user)]) successfully pried [src.name] open.")
-						record_featured_stat(FEATURED_STATS_CRIMINALS, user)
-						record_round_statistic(STATS_LOCKS_PICKED)
-						var/obj/effect/track/structure/new_track = new(get_turf(src))
-						new_track.handle_creation(user)
-					playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
-					src.force_open()
-					break
-				else
-					continue
-			else
-				playsound(loc, 'sound/items/pickbad.ogg', 40, TRUE)
-				attacking_item.take_damage(1, BRUTE, "blunt")
-				to_chat(user, "<span class='warning'>Clack.</span>")
-				add_sleep_experience(L, /datum/skill/misc/lockpicking, L.STAINT/4)
-				continue
-	else
-		return ..()
-
 /obj/structure/roguewindow/openclose/attack_right(mob/user)
+	var/mob/living/carbon/human/opener = user
+	var/obj/item/held_knife = user.get_active_held_item()
+//	var/lockpicking_check
+	var/lockpicking_check_done
 	if(get_dir(src,user) == lockdir)
 		if(brokenstate)
 			to_chat(user, span_warning("It's broken, that would be foolish."))
@@ -231,6 +178,89 @@
 			close_up(user)
 		else
 			open_up(user)
+	else if(!(get_dir(src,user) == lockdir) && (istype(held_knife, /obj/item/rogueweapon/huntingknife)))
+		var/lockprogress = 0
+		var/locktreshold = window_lock_strength
+
+		var/pickskill = user.get_skill_level(/datum/skill/misc/lockpicking)
+		var/perbonus = opener.STAPER/4
+		var/speedbonus = opener.STASPD/4
+		var/picktime = 100
+		var/pickchance = 10
+		var/moveup = 10
+		var/break_me = max_integrity * integrity_failure - 5
+		var/bonus_on_closing = 1
+		if(climbable)
+			bonus_on_closing = 1.1
+
+		picktime -= (pickskill * 8 + perbonus * 5 + speedbonus * 5 + held_knife.picklvl * 2)
+		picktime = clamp(picktime, 20, 70)
+
+		moveup += (pickskill * 6 + perbonus + speedbonus/2 + held_knife.picklvl * 2)
+		moveup = clamp(moveup, 10, 100)
+
+		pickchance += pickskill * 11 + perbonus * 4 + speedbonus * 3
+		pickchance *= held_knife.picklvl
+		pickchance *= bonus_on_closing
+		pickchance = clamp(pickchance, 1, 96)
+
+		if(brokenstate)
+			to_chat(user, span_warning("It's broken, that would be foolish."))
+			return
+		else
+			if(!climbable)
+				to_chat(user, ("<span class='deadsay'>I slide [held_knife] through [src] seal...</span>"))
+			while(!QDELETED(held_knife) && (lockprogress < locktreshold))
+				if(!do_after(user, picktime, target = src))
+					break
+				if(prob(pickchance))
+					lockprogress += moveup
+					playsound(src.loc, pick('sound/items/pickgood1.ogg','sound/items/pickgood2.ogg'), 5, TRUE)
+					to_chat(user, "<span class='warning'>Click... [pickchance]% chance to succeed...</span>")
+					if(user.mind)
+						add_sleep_experience(opener, /datum/skill/misc/lockpicking, opener.STAINT/2)
+					if(lockprogress >= locktreshold)
+						record_featured_stat(FEATURED_STATS_CRIMINALS, user)
+						GLOB.lynd_round_stats[STATS_LOCKS_PICKED]++
+						lockpicking_check_done = 1
+						break
+					else
+						continue
+				else
+					playsound(loc, 'sound/items/pickbad.ogg', 40, TRUE)
+					obj_integrity = break_me
+					held_knife.take_damage(10, BRUTE, "blunt")
+					to_chat(user, "<span class='warning'>Clack. [100 - pickchance]% chance to fuck up.</span>")
+					add_sleep_experience(opener, /datum/skill/misc/lockpicking, opener.STAINT/4)
+					playsound(src, break_sound, 100)
+					log_admin("Window broken at X:[src.x] Y:[src.y] Z:[src.z] in area: [get_area(src)]")
+					loud_message("A loud crash of a window getting broken rings out", hearing_distance = 14)
+					new /obj/item/natural/glass_shard (get_turf(src))
+					new /obj/effect/decal/cleanable/debris/glassy(get_turf(src))
+					brokenstate = TRUE
+					climbable = TRUE
+					opacity = FALSE
+					update_icon()
+					var/obj/effect/track/structure/new_track = new(get_turf(src))
+					new_track.handle_creation(user)
+					user.visible_message(
+						span_warning("[user] fucks up! The window is broken!!"),
+						span_danger("I fucked up!! FUCK!!"))
+					return
+
+			if(climbable && (lockpicking_check_done == 1))
+				close_up(user)
+				user.visible_message(
+					span_notice("[user] closes the window!!"),
+					span_notice("I close the window!"))
+			else if(!climbable && (lockpicking_check_done == 1))
+				to_chat(user, "<span class='deadsay'>The locking mechanism gives...</span>")
+				var/obj/effect/track/structure/new_track = new(get_turf(src))
+				new_track.handle_creation(user)
+				open_up(user)
+				user.visible_message(
+					span_notice("[user] pries open [src] with [held_knife]!!"),
+					span_notice("I pry [src] open!"))
 	else
 		to_chat(user, span_warning("The window doesn't close from this side."))
 

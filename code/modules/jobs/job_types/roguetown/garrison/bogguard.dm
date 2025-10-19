@@ -8,7 +8,7 @@
 	selection_color = JCOLOR_SOLDIER
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	tutorial = "The life of a Warden is not an easy one- as you found out upon recruitment. Whether your recruitment was through forced conscription or through willingnes to serve- you still find yourself amongst the Brotherhood of the Draguippe- sworn to protect the forests and the main foot-entrance into the city at any cost. You are the frontline defense against evil, and protector of the frontier roads. The life is not easy, but this is what you were brought on for. Protect the forests well, for if you fall, then nothing will stop what lurks outside from seeping in.."
 	display_order = JDO_TOWNGUARD

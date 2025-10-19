@@ -9,7 +9,7 @@
 	spawn_positions = 4
 	advclass_cat_rolls = list(CTAG_GUILDSMEN = 20)
 
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 
 	tutorial ="You studied for many yils under your master with a few other apprentices to become a member of the Maker's Guild--a trade that certainly has seen a boom in recent times, with many a bannerlord keenly aware of the importance in maintaining a well-equipped army..\
 	As a Guildsman, you hail from the three most important constituent sub-guilds: the Smiths, the Artificers, and the Architects. Obey instruction from your Guildmaster, and you will see your business prosper."

@@ -143,7 +143,7 @@
 #define ARMOR_PANTS_BRIGANDINE list("blunt" = 40, "slash" = 70, "stab" = 70, "piercing" = 50, "fire" = 0, "acid" = 0)
 
 //Antag / Special / Unique armor defines
-#define ARMOR_VAMP list("blunt" = 100, "slash" = 100, "stab" = 90, "piercing" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_VAMP list("blunt" = 100, "slash" = 100, "stab" = 90, "piercing" = 80, "fire" = 0, "acid" = 0)
 #define ARMOR_WWOLF list("blunt" = 100, "slash" = 90, "stab" = 80, "piercing" = 70, "fire" = 40, "acid" = 0)
 #define ARMOR_DRAGONSCALE list("blunt" = 100, "slash" = 100, "stab" = 100, "fire" = 50, "acid" = 0)
 #define ARMOR_ASCENDANT list("blunt" = 50, "slash" = 100, "stab" = 80, "piercing" = 80, "fire" = 0, "acid" = 0)
@@ -198,7 +198,6 @@ Balloon Alert / Floating Text defines
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
 	/datum/species/anthromorph,\
-	,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/kobold,\
@@ -232,19 +231,17 @@ Balloon Alert / Floating Text defines
 
 #define RACES_DESPISED \
 	/datum/species/anthromorph,\
-	,\
 	/datum/species/goblinp,\
 	/datum/species/kobold,\
-	,\
+
+#define RACES_VILLIFIED \
+	/datum/species/dullahan,\
 
 #define RACES_RESPECTED_UP list(RACES_RESPECTED, RACES_ESTEEMED)
 
-#define RACES_CONSTRUCT \
-	,\
+#define ACCEPTED_RACES list(RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED)	//Allows all races except dullahan
 
-#define RACES_ALL_KINDS list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_CONSTRUCT, RACES_ESTEEMED)
-
-#define RACES_NO_CONSTRUCT list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_ESTEEMED)
+#define RACES_ALL_KINDS list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_ESTEEMED, RACES_VILLIFIED)
 
 #define RACES_SHUNNED_UP list(RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_ESTEEMED)
 
@@ -267,11 +264,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
 	/datum/species/anthromorph,\
-	,\
 	/datum/species/demihuman,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
-	,\
 )
 
 #define CLOTHED_RACES_TYPES list(\
@@ -296,6 +291,7 @@ Balloon Alert / Floating Text defines
 	/datum/species/orc,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
+	/datum/species/dullahan,\
 )
 // Non-dwarf non-kobold non-goblin mostly
 #define NON_DWARVEN_RACE_TYPES list(\
@@ -429,6 +425,7 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define CTAG_WRETCH			"CAT_WRETCH"		// Wretch classes untethered from adventurer
 #define CTAG_LSKELETON		"CAT_LSKELETON"		// Lich Fortified Skeleton classes
 #define CTAG_NSKELETON		"CAT_NSKELETON"		// Necromancer Greater Skeleton classes
+#define CTAG_LICKER_WRETCH  "CAT_LICKER_WRETCH" // Licker wretch. Nuff said.
 
 #define CTAG_WARDEN			"CAT_WARDEN"		// Warden class - Handles warden class selector.
 #define CTAG_WATCH			"CAT_WATCH"			// Watch class - Handles Town Watch class selector

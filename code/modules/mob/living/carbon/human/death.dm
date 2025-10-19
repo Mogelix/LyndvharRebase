@@ -41,7 +41,7 @@
 
 	if(mind)
 		if(!gibbed)
-			var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
+			var/datum/antagonist/vampire/VD = mind.has_antag_datum(/datum/antagonist/vampire)
 			if(VD)
 				dust(just_ash=TRUE,drop_items=TRUE)
 				return
@@ -146,6 +146,12 @@
 	dizziness = 0
 	jitteriness = 0
 	dna.species.spec_death(gibbed, src)
+
+	if(isdullahan(src))
+		var/datum/species/dullahan/user_species = src.dna.species
+		if(user_species.headless)
+			user_species.soul_light_off()
+			update_body()
 
 	if(SSticker.HasRoundStarted())
 		SSblackbox.ReportDeath(src)

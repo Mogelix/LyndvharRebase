@@ -6,7 +6,7 @@
 	total_positions = 25
 	spawn_positions = 25
 
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 	allowed_ages = list(AGE_ADULT)
 
 	tutorial = "Dozens of people end up down on their luck in the kingdom of Lyndhardtia every day thanks to the civil war. They sometimes make something of themselves but much more often die in the streets."
