@@ -4754,6 +4754,8 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
+/obj/item/rogueweapon/hammer/iron,
+/obj/item/rogueweapon/tongs,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/banditcamp)
 "KU" = (
