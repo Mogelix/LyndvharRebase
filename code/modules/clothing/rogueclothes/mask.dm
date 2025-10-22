@@ -528,7 +528,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
 	sellprice = 0
 
-/obj/item/clothing/mask/rogue/lordmask/naledi/equipped(mob/user, slot)
+/obj/item/clothing/mask/rogue/lordmask/khazumian/equipped(mob/user, slot)
 	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -536,7 +536,7 @@
 			H.remove_status_effect(/datum/status_effect/debuff/lost_naledi_mask)
 			H.remove_stress(/datum/stressevent/naledimasklost)
 
-/obj/item/clothing/mask/rogue/lordmask/naledi/dropped(mob/user)
+/obj/item/clothing/mask/rogue/lordmask/khazumian/dropped(mob/user)
 	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -544,6 +544,17 @@
 			if(!istiefling(user)) //Funny exception
 				H.apply_status_effect(/datum/status_effect/debuff/lost_naledi_mask)
 				H.add_stress(/datum/stressevent/naledimasklost)
+
+/obj/item/clothing/mask/rogue/lordmask/khazumian/sojourner
+	name = "sojourner's mask"
+	item_state = "naledimask"
+	icon_state = "naledimask"
+	desc = "A golden mask, gnarled by the sustained agonies of the elements; yet as long as its Khazumite hexes endure, so too will its wearer. Hand-fitted shingles flank the sides to repel incoming strikes."
+	max_integrity = 150
+	armor = ARMOR_MASK_METAL
+	flags_inv = HIDEFACE|HIDESNOUT
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_CHOP, BCLASS_BLUNT)
+	sellprice = 0
 
 /obj/item/clothing/mask/rogue/exoticsilkmask
 	name = "exotic silk mask"

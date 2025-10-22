@@ -3,6 +3,7 @@
 	desc = ""
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = "default_human_head"
+	slot_flags = ITEM_SLOT_HIP
 	max_damage = 200
 	body_zone = BODY_ZONE_HEAD
 	body_part = HEAD
@@ -50,6 +51,11 @@
 
 	/// Brainkill means that this head is considered dead and revival is impossible
 	var/brainkill = FALSE
+
+/obj/item/bodypart/head/examine()
+	. = ..()
+	if(sellprice)
+		. += span_notice("This head seems to be wanted by the Judiciary of Azuria. It can be sold at the merchant or a HEADEATER.")
 
 /obj/item/bodypart/head/grabbedintents(mob/living/user, precise)
 	var/used_limb = precise

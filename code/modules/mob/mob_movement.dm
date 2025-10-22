@@ -92,6 +92,8 @@
 		return Move_object(direct)
 	if(!isliving(mob))
 		return mob.Move(n, direct)
+	else if(HAS_TRAIT(mob, TRAIT_IN_FRENZY) || HAS_TRAIT(mob, TRAIT_MOVEMENT_BLOCKED))
+		return FALSE
 	if(mob.stat == DEAD)
 #ifdef TESTSERVER
 		mob.ghostize()
@@ -171,15 +173,13 @@
 			L.sprinted_tiles = 0
 
 	var/old_direct = mob.dir
-
+	
 	. = ..()
 
 	if((direct & (direct - 1)) && mob.loc == n) //moved diagonally successfully
 		add_delay *= 2
 
-	var/after_glide = 0
-
-	mob.set_glide_size(after_glide)
+	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay))
 
 	move_delay += add_delay
 	if(.) // If mob is null here, we deserve the runtime
@@ -629,12 +629,6 @@
 		switch(intent)
 			if(MOVE_INTENT_SNEAK)
 				m_intent = MOVE_INTENT_SNEAK
-				if(isliving(src))
-					var/mob/living/L = src
-					if((/datum/mob_descriptor/prominent/prominent_bottom in L.mob_descriptors) || (/datum/mob_descriptor/prominent/prominent_thighs in L.mob_descriptors))
-						L.loud_sneaking = TRUE
-					else
-						L.loud_sneaking = FALSE
 				update_sneak_invis()
 
 			if(MOVE_INTENT_WALK)

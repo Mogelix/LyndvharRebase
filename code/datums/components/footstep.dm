@@ -53,11 +53,12 @@
 		if(!C.get_bodypart(BODY_ZONE_L_LEG) && !C.get_bodypart(BODY_ZONE_R_LEG))
 			return
 		if(C.m_intent == MOVE_INTENT_SNEAK && !T.footstepstealth)
-			if(!C.loud_sneaking || C.rogue_sneaking)
+			if(C.rogue_sneaking && !C.loud_sneaking)
 				return// stealth
+		if(C.loud_sneaking) 		
 			steps++
 			if(steps&2 == 2) // Hrrghn... Colonel, I'm trying to sneak around, but I'm dummy thicc, and the clap of my asscheeks keeps ALERTING THE GUARDS
-				playsound(C, pick(list('sound/misc/mat/thicc (1).ogg','sound/misc/mat/thicc (2).ogg','sound/misc/mat/thicc (3).ogg','sound/misc/mat/thicc (4).ogg')), 15 * volume)
+				playsound(C, pick(list('sound/misc/mat/clap1.ogg', 'sound/misc/mat/clap2.ogg', 'sound/misc/mat/clap3.ogg', 'sound/misc/mat/clap4.ogg', 'sound/misc/mat/clap5.ogg', 'sound/misc/mat/clap6.ogg', 'sound/misc/mat/clap7.ogg', 'sound/misc/mat/clap8.ogg', 'sound/misc/mat/clap9.ogg')), 15 * volume, TRUE)
 			if(steps >= 4)
 				steps = 0
 			return// uhm... stealth?
@@ -69,11 +70,11 @@
 	if(steps % 2)
 		return
 
-	if(steps != 0) // don't need to step as often when you hop around
-		return
 	return T
 
 /datum/component/footstep/proc/play_simplestep()
+	if(HAS_TRAIT(parent, TRAIT_SILENT_FOOTSTEPS))
+		return
 	var/turf/open/T = prepare_step()
 	if(!T)
 		return
@@ -101,6 +102,8 @@
 /datum/component/footstep/proc/play_humanstep()
 	var/turf/open/T = prepare_step()
 	if(!T)
+		return
+	if(HAS_TRAIT(parent, TRAIT_SILENT_FOOTSTEPS))
 		return
 	var/mob/living/carbon/human/H = parent
 	var/feetCover = (H.wear_armor && (H.wear_armor.body_parts_covered & FEET)) || (H.wear_pants && (H.wear_pants.body_parts_covered & FEET))

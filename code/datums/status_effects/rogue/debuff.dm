@@ -518,7 +518,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/naledimask
 	name = "Lost Mask"
-	desc = "Djinns and daemons may claim me at any moment without the mask. It is not safe."
+	desc = "I am vulnerable without the protection of the mask. It is not safe."
 	icon_state = "muscles"
 
 /datum/status_effect/debuff/lost_shaman_hood
@@ -649,6 +649,17 @@
 
 /atom/movable/screen/alert/status_effect/debuff/knockout
 	name = "Drowsy"
+
+/datum/status_effect/debuff/mesmerised
+	id = "mesmerised"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/mesmerised
+	effectedstats = list(STATKEY_STR = -2, STATKEY_LCK = -2, STATKEY_PER = -2, STATKEY_SPD = -2)
+	duration = 30 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/mesmerised
+	name = "Mesmerised"
+	desc = span_warning("Their beauty is otherwordly..")
+	icon_state = "acid"
 
 /datum/status_effect/debuff/liver_failure
 	id = "liver_failure"

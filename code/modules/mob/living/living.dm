@@ -812,20 +812,35 @@
 /mob/living/proc/check_revive(mob/living/user)
 	if(src == user)
 		return FALSE
+	if(stat < DEAD)
+		to_chat(user, span_warning("Nothing happens."))
+		return FALSE
 	if(!mind)
 		return FALSE
 	if(!mind.active)
-		to_chat(user, span_warning("Astrata is not done with [src], yet."))
+		to_chat(user, span_warning("They are unresponsive to my attempts. For now."))
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_DNR))
-		to_chat(user, span_danger("None of the Ten have them. Their only chance is spent. Where did they go?"))
+		to_chat(user, span_danger("None of the divine have them. Their only chance is spent. Where did they go?"))
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_NECRAS_VOW))
 		to_chat(user, span_warning("This one has pledged themselves whole to Necra. They are Hers."))
 		return FALSE
-	if(stat < DEAD)
-		to_chat(user, span_warning("Nothing happens."))
+
+	var/obj/item/bodypart/head = get_bodypart("head")
+	var/obj/item/organ/brain/brain = getorganslot(ORGAN_SLOT_BRAIN)
+	var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+
+	if(!head)
+		to_chat(user, span_warning("[src] is missing their head!"))
 		return FALSE
+	if(!brain)
+		to_chat(user, span_warning("[src] is missing their brain!"))
+		return FALSE
+	if(!heart)
+		to_chat(user, span_warning("[src] is missing their heart!"))
+		return FALSE
+
 	return TRUE
 
 //Proc used to resuscitate a mob, for full_heal see fully_heal()
@@ -926,6 +941,8 @@
 	if(H)
 		if(H.rotted || H.skeletonized || H.brainkill)
 			return FALSE
+	else
+		return FALSE
 
 
 /mob/living/proc/update_damage_overlays()
@@ -1343,12 +1360,18 @@
 	if(!who.Adjacent(src))
 		return
 
-	who.visible_message(span_warning("[src] tries to remove [who]'s [what.name]."), \
-					span_danger("[src] tries to remove my [what.name]."), null, null, src)
+	if(!enhanced_strip)
+		who.visible_message(span_warning("[src] tries to remove [who]'s [what.name]."), \
+						span_danger("[src] tries to remove my [what.name]."), null, null, src)
+
 	to_chat(src, span_danger("I try to remove [who]'s [what.name]..."))
 	what.add_fingerprint(src)
-	if(do_mob(src, who, what.strip_delay * surrender_mod))
-		if(what && Adjacent(who))
+	var/strip_delayed = what.strip_delay
+	if(enhanced_strip)
+		strip_delayed = 0.1 SECONDS
+	if(do_after(src, strip_delayed * surrender_mod, who))
+		if(what && (Adjacent(who) || (enhanced_strip && (get_dist(src, who) <= 3))))
+			enhanced_strip = FALSE
 			if(islist(where))
 				var/list/L = where
 				if(what == who.get_item_for_held_index(L[2]))
@@ -1357,7 +1380,6 @@
 			if(what == who.get_item_by_slot(where))
 				if(what.doStrip(src, who))
 					log_combat(src, who, "stripped [what] off")
-					who.update_fov_angles()
 
 	if(Adjacent(who)) //update inventory window
 		who.show_inv(src)
@@ -2226,6 +2248,15 @@
 	if(client)
 		client.pixel_x = 0
 		client.pixel_y = 0
+	if(isdullahan(src))
+		var/mob/living/carbon/human/human = src
+		var/obj/item/organ/dullahan_vision/vision = human.getorganslot(ORGAN_SLOT_HUD)
+		var/datum/species/dullahan/species = human.dna.species
+		if(species.headless && vision.viewing_head)
+			var/obj/item/bodypart/head/dullahan/head = species.my_head
+			reset_perspective(head)
+			update_cone_show()
+			return
 	reset_perspective()
 	update_cone_show()
 //	UnregisterSignal(src, COMSIG_MOVABLE_PRE_MOVE)

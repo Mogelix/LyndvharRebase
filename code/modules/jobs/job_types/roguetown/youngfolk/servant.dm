@@ -7,7 +7,7 @@
 	total_positions = 3
 	spawn_positions = 3
 
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 	allowed_ages = ALL_AGES_LIST
 
 	tutorial = "Granted a life of comfortable servitude in the manor, you follow the Seneschal's commands and spend your day performing necessary but menial tasks. If it were not for your dutiful work, the noble court would have starved to death a long time ago."

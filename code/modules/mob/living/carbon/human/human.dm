@@ -51,7 +51,6 @@
 #ifdef MATURESERVER
 	sexcon = new /datum/sex_controller(src)
 #endif
-	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
 
 	icon_state = ""		//Remove the inherent human icon that is visible on the map editor. We're rendering ourselves limb by limb, having it still be there results in a bug where the basic human icon appears below as south in all directions and generally looks nasty.
@@ -130,10 +129,10 @@
 /mob/living/carbon/human/Stat()
 	..()
 	if(mind)
-		var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
+		var/datum/antagonist/vampire/VD = mind.has_antag_datum(/datum/antagonist/vampire)
 		if(VD)
 			if(statpanel("Stats"))
-				stat("Vitae:",VD.vitae)
+				stat("Vitae:", bloodpool)
 		if((mind.assigned_role == "Shepherd") || (mind.assigned_role == "Inquisitor"))
 			if(statpanel("Status"))
 				stat("Confessions sent: [GLOB.confessors.len]")
@@ -289,18 +288,6 @@
 /mob/living/carbon/human/proc/canUseHUD()
 	return (mobility_flags & MOBILITY_USE)
 
-///Checking if the unit can bite
-/mob/living/carbon/human/proc/can_bite()
-	//if(mouth?.muteinmouth && mouth?.type != /obj/item/grabbing/bite) //This one allows continued first biting rather than having to chew
-	if(mouth?.muteinmouth)
-		return FALSE
-	for(var/obj/item/grabbing/grab in grabbedby) //Grabbed by the mouth
-		if(grab.sublimb_grabbed == BODY_ZONE_PRECISE_MOUTH)
-			return FALSE
-			
-	return TRUE
-
-
 /mob/living/carbon/human/can_inject(mob/user, error_msg, target_zone, penetrate_thick = 0)
 	. = 1 // Default to returning true.
 	if(user && !target_zone)
@@ -437,6 +424,18 @@
 			R.fields["name"] = newname
 
 /mob/living/carbon/human/get_total_tint()
+	if(isdullahan(src))
+		var/datum/species/dullahan/species = dna.species
+		var/obj/item/bodypart/head/dullahan/user_head = species.my_head
+		if(species.headless && user_head)
+			var/obj/item/organ/dullahan_vision/vision = getorganslot(ORGAN_SLOT_HUD)
+
+			if(vision && vision.viewing_head && user_head.eyes)
+				. = user_head.eyes.tint
+			else
+				. = INFINITY
+			return
+		
 	. = ..()
 	if(glasses)
 		. += glasses.tint
@@ -701,22 +700,27 @@
 			admin_ticket_log("[key_name_admin(usr)] has modified the bodyparts of [src] to [result]")
 			set_species(newtype)
 
-/mob/living/carbon/human/MouseDrop_T(mob/living/target, mob/living/user)
-	if(pulling == target && stat == CONSCIOUS)
-		//If they dragged themselves and we're currently aggressively grabbing them try to piggyback (not on cmode)
-		if(user == target && can_piggyback(target))
-			if(cmode)
-				to_chat(target, span_warning("[src] won't let you on!"))
-				return FALSE
-			piggyback(target)
-			return TRUE
-		//If you dragged them to you and you're aggressively grabbing try to carry them
-		else if(user != target && can_be_firemanned(target))
-			var/obj/G = get_active_held_item()
-			if(G)
-				if(istype(G, /obj/item/grabbing))
-					fireman_carry(target)
-					return TRUE
+/mob/living/carbon/human/MouseDrop_T(atom/dragged, mob/living/user)
+	if(istype(dragged, /mob/living))
+		var/mob/living/target = dragged
+		if(pulling == target && stat == CONSCIOUS)
+			//If they dragged themselves and we're currently aggressively grabbing them try to piggyback (not on cmode)
+			if(user == target && can_piggyback(target))
+				if(cmode)
+					to_chat(target, span_warning("[src] won't let you on!"))
+					return FALSE
+				piggyback(target)
+				return TRUE
+			//If you dragged them to you and you're aggressively grabbing try to carry them
+			else if(user != target && can_be_firemanned(target))
+				var/obj/G = get_active_held_item()
+				if(G)
+					if(istype(G, /obj/item/grabbing))
+						fireman_carry(target)
+						return TRUE
+	else if(istype(dragged, /obj/item/bodypart/head/dullahan/))
+		var/obj/item/bodypart/head/dullahan/item_head = dragged
+		item_head.show_inv(user)
 	. = ..()
 
 //src is the user that will be carrying, target is the mob to be carried

@@ -267,14 +267,14 @@
 	toolspeed = 2
 
 /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
-	name = "Wardens' axe"
-	desc = "A multi-use axe smithed by the Wardens since time immemorial for both it's use as a tool and a weapon."
-	icon_state = "wardenpax"
+	name = "blackhandle axe"
+	desc = "A multi-use axe smithed for the garrison, for use as a tool and a weapon."
+	icon_state = "garripax"
 	force = 22
-	force_wielded = 28
+	force_wielded = 26
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
-	smeltresult = /obj/item/ingot/steel
+	smeltresult = /obj/item/ingot/iron
 	wlength = WLENGTH_NORMAL
 	toolspeed = 2
 
@@ -523,6 +523,7 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	minstr = 12
 	max_blade_int = 350
+	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silver
 
 /obj/item/rogueweapon/greataxe/silver/ComponentInitialize()
@@ -547,6 +548,7 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	minstr = 12
 	max_blade_int = 350
+	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silverblessed
 
 /obj/item/rogueweapon/greataxe/psy/ComponentInitialize()

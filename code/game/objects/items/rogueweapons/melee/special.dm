@@ -123,17 +123,11 @@
 
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
-			var/area/target_area = get_area(H)
-
-			if(!istype(target_area, /area/rogue/indoors/town/manor))
-				to_chat(user, span_danger("The rod cannot be used on targets outside of the manor!"))
-				return
-
 			if(H == HU)
 				return
 
 			if(!COOLDOWN_FINISHED(src, scepter))
-				to_chat(user, span_danger("The [src] is not ready yet! [round(COOLDOWN_TIMELEFT(src, scepter) / 10, 1)] seconds left!"))
+				to_chat(user, span_danger("\the [src] is not ready yet! [round(COOLDOWN_TIMELEFT(src, scepter) / 10, 1)] seconds left!"))
 				return
 
 			if(H.anti_magic_check())
@@ -148,7 +142,7 @@
 				HU.visible_message(span_warning("[HU] electrocutes [H] with the [src]."))
 				user.Beam(target,icon_state="lightning[rand(1,12)]",time=5)
 				H.electrocute_act(5, src)
-				COOLDOWN_START(src, scepter, 20 SECONDS)
+				COOLDOWN_START(src, scepter, 15 SECONDS)
 				to_chat(H, span_danger("I'm electrocuted by the scepter!"))
 				return
 
@@ -321,7 +315,7 @@
 
 /obj/item/rogueweapon/katar/punchdagger
 	name = "punch dagger"
-	desc = "A weapon that combines the ergonomics of the Ranesheni katar with the capabilities of the Western Psydonian \"knight-killers\". It can be tied around the wrist."
+	desc = "A weapon that combines the ergonomics of the Zybantu katar with the capabilities of the Western Psydonian \"knight-killers\". It can be tied around the wrist."
 	slot_flags = ITEM_SLOT_WRISTS
 	max_integrity = 120		//Steel dagger -30
 	force = 15		//Steel dagger -5
@@ -378,7 +372,7 @@
 	)
 
 /obj/item/rogueweapon/knuckles/psydon/old
-	name = "old psydonian knuckles"
+	name = "enduring knuckles"
 	desc = "A simple piece of harm molded in a holy mixture of steel and silver, its holy blessing long since faded. You are HIS weapon, you needn't fear Aeon."
 	icon_state = "psyknuckle"
 	force = 22
