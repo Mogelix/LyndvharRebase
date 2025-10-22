@@ -127,7 +127,7 @@
 				return
 
 			if(!COOLDOWN_FINISHED(src, scepter))
-				to_chat(user, span_danger("The [src] is not ready yet! [round(COOLDOWN_TIMELEFT(src, scepter) / 10, 1)] seconds left!"))
+				to_chat(user, span_danger("\the [src] is not ready yet! [round(COOLDOWN_TIMELEFT(src, scepter) / 10, 1)] seconds left!"))
 				return
 
 			if(H.anti_magic_check())
@@ -142,7 +142,7 @@
 				HU.visible_message(span_warning("[HU] electrocutes [H] with the [src]."))
 				user.Beam(target,icon_state="lightning[rand(1,12)]",time=5)
 				H.electrocute_act(5, src)
-				COOLDOWN_START(src, scepter, 20 SECONDS)
+				COOLDOWN_START(src, scepter, 15 SECONDS)
 				to_chat(H, span_danger("I'm electrocuted by the scepter!"))
 				return
 
