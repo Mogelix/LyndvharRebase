@@ -148,7 +148,7 @@
 	add_random_psy_vault_guard_beltr_stuff(H)
 	add_random_psy_vault_guard_beltl_stuff(H)
 	pants = /obj/item/clothing/under/roguetown/chainlegs/kilt
-	boots = /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
+	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
 	//Weapons
 	add_random_psy_vault_guard_weapon(H)
 
