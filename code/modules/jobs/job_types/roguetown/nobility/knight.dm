@@ -445,7 +445,7 @@
 			if("Light Armor")
 				shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 				pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
+				armor = /obj/item/clothing/suit/roguetown/armor/brigandine/light
 			if("Medium Armor")
 				shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 				pants = /obj/item/clothing/under/roguetown/chainlegs
