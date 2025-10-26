@@ -155,7 +155,7 @@
 	category = "Transmutation"
 	result = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1)
 	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /datum/reagent/water = 48)
-	craftdiff = 3 //WHO THE FUCK THOUGHT SETTING THIS AT 2 WAS A GOOD IDEA? MAKE IT MAKE SENSE.
+	craftdiff = 4
 	verbage_simple = "transmute"
 
 /datum/crafting_recipe/roguetown/alchemy/g2wes
