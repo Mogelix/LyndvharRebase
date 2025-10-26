@@ -67,6 +67,10 @@
 //		return list(SPAN_DWARF)
 	return message_language.spans
 
+/datum/species/dwarf/mountain/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
 /datum/species/dwarf/mountain/get_skin_list()
 	return list(
 		"Platinum" = SKIN_COLOR_PLATINUM,

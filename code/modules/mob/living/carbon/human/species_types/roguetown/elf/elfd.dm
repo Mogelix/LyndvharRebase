@@ -117,6 +117,10 @@
 /datum/species/elf/dark/qualifies_for_rank(rank, list/features)
 	return TRUE
 
+/datum/species/elf/dark/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
 /datum/species/elf/dark/get_skin_list()
 	return list(
 		"Commorah" = SKIN_COLOR_COMMORAH,

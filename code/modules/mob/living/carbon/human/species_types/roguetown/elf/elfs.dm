@@ -98,6 +98,10 @@
 /datum/species/elf/wood/qualifies_for_rank(rank, list/features)
 	return TRUE
 
+/datum/species/elf/wood/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
 /datum/species/elf/wood/get_skin_list()
 	return list(
 		"Snow Elf" = SKIN_COLOR_SNOW_ELF,
