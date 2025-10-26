@@ -22,7 +22,7 @@
 	result = list(/obj/item/clothing/cloak/half)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 1)
-	craftdiff = 3
+	craftdiff = 2
 	sellprice = 19
 
 /datum/crafting_recipe/roguetown/weaving/puritan
@@ -53,7 +53,7 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/astrata)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
-	craftdiff = 4
+	craftdiff = 3
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/abyssorrobe
@@ -61,7 +61,7 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/abyssor)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
-	craftdiff = 4
+	craftdiff = 3
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/abyssorhood
@@ -85,7 +85,7 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/noc)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
-	craftdiff = 4
+	craftdiff = 3
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/nochood
@@ -101,7 +101,7 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/dendor)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
-	craftdiff = 4
+	craftdiff = 3
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/necrarobe
@@ -109,7 +109,7 @@
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/necra)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
-	craftdiff = 4
+	craftdiff = 3
 	sellprice = 25
 
 /datum/crafting_recipe/roguetown/weaving/necrahood
@@ -125,7 +125,7 @@
 	result = list (/obj/item/clothing/suit/roguetown/shirt/dress)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 2)
-	craftdiff = 5
+	craftdiff = 4
 	sellprice = 27
 
 /datum/crafting_recipe/roguetown/weaving/silkdress
@@ -133,7 +133,7 @@
 	result = list (/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random)
 	reqs = list(/obj/item/natural/fibers = 2,
 				/obj/item/natural/silk = 3)
-	craftdiff = 5
+	craftdiff = 4
 	sellprice = 30
 
 /datum/crafting_recipe/roguetown/weaving/silkcoat
@@ -142,7 +142,7 @@
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 3,
 				/obj/item/natural/fur = 2)
-	craftdiff = 5
+	craftdiff = 4
 	sellprice = 60
 
 //Eora content from Stonekeep
