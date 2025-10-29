@@ -539,6 +539,10 @@
 	},
 /turf/open/floor/rogue/tile/harem,
 /area/rogue/indoors)
+"tn" = (
+/obj/structure/dungeon_entry/center,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "tt" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled,
 /turf/open/floor/rogue/hay,
@@ -1409,6 +1413,10 @@
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors)
+"XN" = (
+/obj/structure/dungeon_entry/hamlet,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "XU" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/effect/decal/cleanable/dirt/cobweb,
@@ -2946,7 +2954,7 @@ rT
 rT
 rT
 rT
-rT
+XN
 rT
 rT
 rT
@@ -3154,7 +3162,7 @@ rT
 rT
 rT
 rT
-rT
+tn
 rT
 rT
 rT
