@@ -1728,7 +1728,6 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					if(new_flavortext == "")
 						flavortext = null
 						flavortext_display = null
-						is_legacy = FALSE
 						ShowChoices(user)
 						return
 					flavortext = new_flavortext
@@ -1736,7 +1735,6 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					ft = html_encode(ft)
 					ft = replacetext(parsemarkdown_basic(ft), "\n", "<BR>")
 					flavortext_display = ft
-					is_legacy = FALSE
 					to_chat(user, "<span class='notice'>Successfully updated flavortext</span>")
 					log_game("[user] has set their flavortext'.")
 				if("ooc_notes")
@@ -1748,7 +1746,6 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					if(new_ooc_notes == "")
 						ooc_notes = null
 						ooc_notes_display = null
-						is_legacy = FALSE
 						ShowChoices(user)
 						return
 					ooc_notes = new_ooc_notes
@@ -1756,7 +1753,6 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					ooc = html_encode(ooc)
 					ooc = replacetext(parsemarkdown_basic(ooc), "\n", "<BR>")
 					ooc_notes_display = ooc
-					is_legacy = FALSE
 					to_chat(user, "<span class='notice'>Successfully updated OOC notes.</span>")
 					log_game("[user] has set their OOC notes'.")
 				if("nsfw_headshot")
