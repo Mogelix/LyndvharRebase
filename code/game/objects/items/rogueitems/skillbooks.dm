@@ -61,7 +61,7 @@
 				icon_state = "book[iconval]_[open]"
 
 /obj/item/skillbook/burn()
-	GLOB.scarlet_round_stats[STATS_BOOKS_BURNED]++
+	GLOB.lynd_round_stats[STATS_BOOKS_BURNED]++
 	..()
 
 /obj/item/skillbook/proc/set_bookstats(var/req,var/cap,var/topic)
@@ -261,7 +261,7 @@
 					newbook.desc = "[final_desc][authors_line]"
 				else
 					newbook.desc = final_desc
-				GLOB.scarlet_round_stats[STATS_BOOKS_PRINTED]++
+				GLOB.lynd_round_stats[STATS_BOOKS_PRINTED]++
 				qdel(src)
 
 

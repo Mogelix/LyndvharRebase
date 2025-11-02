@@ -65,6 +65,7 @@
 #define TRAIT_SEA_DRINKER "Denizen of the Deep"
 #define TRAIT_STUDENT		"Student"
 #define TRAIT_INTELLECTUAL "Intellectual"
+#define TRAIT_ASSESSOR "Scrutiny"
 #define TRAIT_GRAVEROBBER "Experienced Grave Robber"
 #define TRAIT_PURITAN "Valorian Emissary"
 #define TRAIT_PURITAN_ADVENTURER "Interrogator"
@@ -341,7 +342,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_OUTDOORSMAN = span_info("My experience in the wilds allows me to fall asleep on surfaces like treebranches as if they were beds."),
 	TRAIT_STUDENT =  span_info("I am overwhelmed by all this knowledge!"),
 	TRAIT_LEGENDARY_ALCHEMIST = span_info("I am an expert in the art of finding herbs in the wild."),
-	TRAIT_INTELLECTUAL = span_info("I have a keen eye and can assess a person's prowess in wit and blade."),
+	TRAIT_INTELLECTUAL = span_info("I know how smart someone is simply by looking at them."),
+	TRAIT_ASSESSOR = span_info("I can gleam someone's true skills and strengths with my keen assessment.")
 	TRAIT_COUNTERCOUNTERSPELL = span_info("I automatically know when to counter Counterspells, and can do so without even thinking about it."),
 	TRAIT_UNSEEMLY = span_info("My face is ugly and makes everyone who looks at me miserable."),
 	TRAIT_HERETIC_SEER = span_info("I can tell other Ascendant followers without sharing their faith."),
