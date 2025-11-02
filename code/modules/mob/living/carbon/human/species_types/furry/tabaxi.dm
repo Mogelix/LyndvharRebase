@@ -168,10 +168,12 @@
 /datum/species/tabaxi/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+	C.verbs += EMOTES_KITTY
 
 /datum/species/tabaxi/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	UnregisterSignal(C, COMSIG_MOB_SAY)
+	C.verbs -= EMOTES_KITTY
 
 /datum/species/tabaxi/random_name(gender,unique,lastname)
 	var/randname
