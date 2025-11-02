@@ -249,22 +249,22 @@
 						to_chat(user, span_warning("[teacher] can't teach me anything."))
 						revert_cast()
 						return
+					
 					var/skill_choice = input(teacher, "Choose a skill to teach","Skills") as null|anything in skill_names
 					if(skill_choice)
 						for(var/real_skill in known_skills)//real_skill is the actual datum for the skill rather than the "Skill" string
 							if(skill_choice == GetSkillRef(real_skill))//if skill_choice (the name string) is equal to real_skill's name ref, essentially
-								if(!teacher in range(2, user))
+								if(!range(2, user))
 									to_chat(teacher, span_warning("I moved too far away from [user]."))
 									to_chat(user, span_warning("[teacher] moved too far away from me."))
 									revert_cast()
 									return
 								teacher.visible_message(("[teacher] begins teaching [user] about [skill_choice]."), ("I begin teaching [user] about [skill_choice]."))
-								if(!do_mob(user, teacher, 100))
+								if(!do_after(teacher, 100, FALSE, user))
 									to_chat(teacher, span_warning("I moved too far away from [user]."))
 									to_chat(user, span_warning("[teacher] moved too far away from me."))
 									revert_cast()
 									return
-
 								teacher_skill = teacher.get_skill_level(real_skill)
 								user_skill = user.get_skill_level(real_skill)
 								if(teacher_skill - user_skill > 2) //if the teacher has over two levels over the user, add 2 levels of skill to the user
