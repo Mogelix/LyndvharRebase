@@ -1797,7 +1797,7 @@
 	is_animal = TRUE
 	show_runechat = FALSE
 
-/mob/proc/yap()
+/mob/proc/emote_yap()
 	set name = "Yap"
 	set category = "Noises"
 	emote("yap", intentional = TRUE)
@@ -1862,4 +1862,9 @@
     stat_allowed = UNCONSCIOUS
     show_runechat = FALSE
 
-#define EMOTES_KITTY list(/mob/proc/emote_meow, /mob/proc/emote_hiss, /mob/proc/emote_trill, /mob/proc/emote_purr)
+#define EMOTES_KITTY list(/mob/proc/emote_meow, /mob/proc/emote_hiss, /mob/proc/emote_trill, /mob/proc/emote_purr, /mob/proc/emote_roar)
+#define EMOTES_LUPINE list(/mob/proc/emote_growl, /mob/proc/emote_whine, /mob/proc/emote_yap, /mob/proc/emote_bark, /mob/proc/emote_howl, /mob/proc/emote_cackle)
+#define EMOTES_LIZARD list(/mob/proc/emote_hiss, /mob/proc/emote_phiss, /mob/proc/emote_growl)
+#define EMOTES_BIRD list(/mob/proc/emote_peep, /mob/proc/emote_caw, /mob/proc/emote_hoot)
+#define EMOTES_LIVESTOCK list(/mob/proc/emote_moo, /mob/proc/emote_bleat)
+#define EMOTES_WILD list(/mob/proc/emote_moo, /mob/proc/emote_bleat, /mob/proc/emote_peep, /mob/proc/emote_caw, /mob/proc/emote_hoot, /mob/proc/emote_phiss, /mob/proc/emote_growl, /mob/proc/emote_whine, /mob/proc/emote_yap, /mob/proc/emote_bark, /mob/proc/emote_howl, /mob/proc/emote_cackle, /mob/proc/emote_meow, /mob/proc/emote_hiss, /mob/proc/emote_trill, /mob/proc/emote_purr, /mob/proc/emote_roar, /mob/proc/emote_chitter, /mob/proc/emote_flutter)
