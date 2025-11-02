@@ -1797,7 +1797,7 @@
 	is_animal = TRUE
 	show_runechat = FALSE
 
-/mob/proc/yap()
+/mob/proc/emote_yap()
 	set name = "Yap"
 	set category = "Noises"
 	emote("yap", intentional = TRUE)
