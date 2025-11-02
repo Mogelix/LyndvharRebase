@@ -105,7 +105,7 @@
 /datum/virtue/utility/linguist
 	name = "Well-Studied"
 	desc = "I've spent my life surrounded by various books or sophisticated foreigners, be it through travel or other fortunes beset on my life. I've picked up several tongues and wits, and keep a journal closeby. I enjoy writing about my talents."
-	custom_text = "Allows the choice of 3 languages to learn upon joining. Grants you an unfinished skillbook, two scrolls, a feather, and a book crafting kit."
+	custom_text = "Allows the choice of 3 languages to learn upon joining. You can discern how smart someone is by examining them."
 	added_traits = list(TRAIT_INTELLECTUAL)
 	added_skills = list(list(/datum/skill/misc/reading, 3, 6))
 	added_stashed_items = list(
