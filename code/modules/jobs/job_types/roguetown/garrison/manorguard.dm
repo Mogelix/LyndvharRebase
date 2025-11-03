@@ -61,7 +61,7 @@
 
 // standard issue goon
 /datum/advclass/manorguard/footsman
-	name = "Footman"
+	name = "Manor Guard"
 	tutorial = "You are a professional soldier of the realm, specializing in melee warfare. Stalwart and hardy, your body can both withstand and dish out powerful strikes.."
 	outfit = /datum/outfit/job/roguetown/manorguard/footsman
 
