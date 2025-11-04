@@ -47,15 +47,28 @@
 						return
 					return
 				else
-					// Pick up the ingot with tongs without clearing the recipe
-					hingot.forceMove(T)
-					T.hingot = hingot
-					T.hott = hott // Transfer heat state
-					hingot = null
-					hott = null
-					T.update_icon()
-					update_icon()
+					forging_comp.material_quality += previous_material_quality
+				forging_comp.current_recipe.num_of_materials += 1
+				qdel(T.hingot)
+				T.hingot = null
+				T.update_icon()
+				update_icon()
+				return
+
+			// Pick up ingot with tongs
+			if(istype(current_workpiece, /obj/item/ingot))
+				if(T.hingot)
+					to_chat(user, span_warning("You're already holding something with your tongs!"))
 					return
+				current_workpiece.forceMove(T)
+				T.hingot = current_workpiece
+				T.hott = hott // Transfer heat state
+				SEND_SIGNAL(current_workpiece, COMSIG_ITEM_REMOVED_FROM_ANVIL, src)
+				current_workpiece = null
+				hott = null
+				T.update_icon()
+				update_icon()
+				return
 		else
 			// Place ingot from tongs onto anvil
 			if(T.hingot && istype(T.hingot, /obj/item/ingot))
@@ -207,8 +220,7 @@
 			if(!istype(recipe))
 				return TRUE
 			var/has_required_item = FALSE
-			var/using_blade = FALSE
-			
+
 			// Check both bar and blade requirements
 			if(recipe.req_bar && istype(hingot, recipe.req_bar))
 				has_required_item = TRUE
@@ -245,6 +257,12 @@
 			previous_material_quality = quality_value
 
 			ui.close()
+
+			// if we have a hammer in our hand, start working immediately
+			var/obj/item/rogueweapon/hammer/hammer = usr.get_active_held_item()
+			if(istype(hammer))
+				attackby(hammer, user)
+
 			return TRUE
 
 /obj/machinery/anvil/attack_hand(mob/user, params)
@@ -267,7 +285,7 @@
 
 /obj/machinery/anvil/process()
 	if(hott)
-		if(world.time > hott + 10 SECONDS)
+		if(world.time > hott + 20 SECONDS)
 			hott = null
 			STOP_PROCESSING(SSmachines, src)
 	else
