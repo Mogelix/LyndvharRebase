@@ -82,11 +82,11 @@ GLOBAL_LIST_INIT(courtier_positions, list(
 GLOBAL_LIST_INIT(garrison_positions, list(
 	"Manor Guard",
 	"Gatemaster",
+	"Squire",
 	"Dungeoneer",
 	"Watch Captain",
 	"Watchman",
 	"Warden",
-	"Squire",
 ))
 
 GLOBAL_LIST_INIT(church_positions, list(

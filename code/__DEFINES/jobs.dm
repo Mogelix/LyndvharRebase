@@ -240,7 +240,7 @@
 #define JDO_COUNCILLOR 4.1
 
 // Courtiers
-#define JDO_MAGICIAN 5
+#define JDO_MAGICIAN 4.2
 #define JDO_MAGEAPPRENTICE 5.1
 #define JDO_PHYSICIAN 6
 #define JDO_APOTHECARY 6.1
