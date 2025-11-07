@@ -20,7 +20,7 @@
 	advclass_cat_rolls = list(CTAG_SERGEANT = 20)
 
 	give_bank_account = 50
-	min_pq = 6
+	min_pq = 3
 	max_pq = null
 	cmode_music = 'sound/music/combat_garrison.ogg'
 	job_traits = list(TRAIT_GUARDSMAN, TRAIT_STEELHEARTED, TRAIT_MEDIUMARMOR)
