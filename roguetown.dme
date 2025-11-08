@@ -1469,6 +1469,7 @@
 #include "code\modules\clothing\rogueclothes\robes.dm"
 #include "code\modules\clothing\rogueclothes\shirts.dm"
 #include "code\modules\clothing\rogueclothes\storage.dm"
+#include "code\modules\clothing\rogueclothes\storage\pouch.dm"
 #include "code\modules\clothing\rogueclothes\wrists.dm"
 #include "code\modules\clothing\rogueclothes\armor\_armor.dm"
 #include "code\modules\clothing\rogueclothes\armor\armordress.dm"
