@@ -125,7 +125,6 @@
 	/datum/rmb_intent/strong,\
 	/datum/rmb_intent/swift,\
 	/datum/rmb_intent/riposte,\
-	/datum/rmb_intent/push,\
 	/datum/rmb_intent/weak)
 
 	rot_type = /datum/component/rot/corpse
@@ -158,6 +157,9 @@
 	COOLDOWN_DECLARE(priest_excommunicate)
 	COOLDOWN_DECLARE(priest_curse)
 	COOLDOWN_DECLARE(priest_change_miracles)
+
+	// bait stacks for aimed intent
+	var/bait_stacks
 
 	// werewolf mob storage (this is bad and probably causes hard dels)
 	var/mob/stored_mob = null
