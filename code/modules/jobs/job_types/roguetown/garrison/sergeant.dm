@@ -135,7 +135,6 @@
 				r_hand = /obj/item/rogueweapon/sword/sabre
 				l_hand = /obj/item/rogueweapon/scabbard/sword
 
-
 /obj/effect/proc_holder/spell/invoked/order
 	name = ""
 	range = 1
