@@ -67,9 +67,10 @@
 	neck = /obj/item/clothing/neck/roguetown/psicross/undivided
 	cloak = /obj/item/clothing/cloak/tabard/crusader/tief
 	id = /obj/item/clothing/ring/silver
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/storage/backpack/rogue/satchel/short
 	backpack_contents = list(
 		/obj/item/ritechalk = 1,
+		/obj/item/storage/keyring/churchie = 1
 		)
 	H.cmode_music = 'sound/music/cmode/church/combat_reckoning.ogg'
 	switch(H.patron?.type)
@@ -321,7 +322,7 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
-	beltr = /obj/item/storage/keyring/churchie
+	beltr = /obj/item/flashlight/flare/torch/lantern
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
