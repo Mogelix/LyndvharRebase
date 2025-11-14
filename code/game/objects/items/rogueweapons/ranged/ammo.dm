@@ -689,6 +689,13 @@
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "stone_sling_bullet"
 
+/obj/item/ammo_casing/caseless/rogue/sling_bullet/bronze
+	name = "bronze sling bullet"
+	desc = "A small bronze sphere. It feels deceptively heavy in the palm of your hand."
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/bronze
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "bronze_sling_bullet"
+
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/aalloy
 	name = "decrepit sling bullet"
 	desc = "A pellet of frayed bronze. The alloy flakes apart in your grasp, staining the palm with flecks of brown-and-red."
