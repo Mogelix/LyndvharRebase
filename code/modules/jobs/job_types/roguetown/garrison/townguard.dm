@@ -27,7 +27,6 @@
 	job_subclasses = list(
 		/datum/advclass/watchman/footsman,
 		/datum/advclass/watchman/archer,
-		/datum/advclass/watchman/pikeman,
 		)
 
 
@@ -83,9 +82,9 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/axes = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/shields = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/polearms = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/whipsflails = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
@@ -102,11 +101,12 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/kettle/iron
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/cuirass/iron
-	beltr = /obj/item/rogueweapon/mace/cudgel
+	beltr = /obj/item/rogueweapon/scabbard/sword
+	l_hand = /obj/item/rogueweapon/sword/short
+	beltl = /obj/item/rogueweapon/mace/cudgel
 	backl = /obj/item/rogueweapon/shield/iron
-	beltl = /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1, /obj/item/storage/keyring/watchman = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1, /obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 2, /obj/item/storage/keyring/watchman = 1)
 	H.verbs |= /mob/proc/haltyell
 
 /datum/advclass/watchman/archer
@@ -124,12 +124,12 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 		STATKEY_CON = -1
 	)
 	subclass_skills = list(
-		/datum/skill/combat/bows = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/bows = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/crossbows = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/maces = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/maces = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/shields = SKILL_LEVEL_NOVICE,
 		/datum/skill/combat/swords = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/climbing = SKILL_LEVEL_EXPERT,
@@ -140,78 +140,23 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 		/datum/skill/misc/medicine = SKILL_LEVEL_NOVICE,
 		/datum/skill/craft/crafting = SKILL_LEVEL_NOVICE,
 		/datum/skill/craft/tanning = SKILL_LEVEL_NOVICE,
-		/datum/skill/misc/tracking = SKILL_LEVEL_NOVICE, 
+		/datum/skill/misc/tracking = SKILL_LEVEL_JOURNEYMAN, 
 	)
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/kettle/iron
-	mask = /obj/item/clothing/head/roguetown/roguehood/red		//To-do: Make a guard hood come in kingdom's colors.
-	armor = /obj/item/clothing/suit/roguetown/armor/leather	//So they get default-dodge expert usage.
-	beltr = /obj/item/quiver/arrows
-	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
-	beltl = /obj/item/storage/keyring/watchman
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	beltl = /obj/item/rogueweapon/mace/cudgel
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1)
+	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1, /obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 2, /obj/item/storage/keyring/watchman)
 	H.verbs |= /mob/proc/haltyell
-
-// Added to baliff under assumption townguard.dm will not be enabled.
-// /mob/proc/haltyell()
-//	set name = "HALT!"
-//	set category = "Noises"
-//	emote("haltyell")
-
-/datum/advclass/watchman/pikeman
-	name = "Watch Pikeman"
-	tutorial = "You are a Pikeman of the City Watch. Given a polearm and some armor, you are expected to defend this city from all threats."
-	outfit = /datum/outfit/job/roguetown/guardsman/pikeman
-
-	category_tags = list(CTAG_WATCH)
-	traits_applied = list(TRAIT_MEDIUMARMOR)
-	subclass_stats = list(
-		STATKEY_STR = 2,
-		STATKEY_CON = 2,
-		STATKEY_WIL = 3,
-		STATKEY_SPD = -1
-	)
-	subclass_skills = list(
-		/datum/skill/combat/maces = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
-		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/axes = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/shields = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/whipsflails = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
-		/datum/skill/misc/sneaking = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/misc/swimming = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
-		/datum/skill/misc/medicine = SKILL_LEVEL_NOVICE,
-		/datum/skill/misc/riding = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/misc/tracking = SKILL_LEVEL_NOVICE,
-	)
-
-/datum/outfit/job/roguetown/guardsman/pikeman/pre_equip(mob/living/carbon/human/H)
-	..()
-	head = /obj/item/clothing/head/roguetown/helmet/kettle/iron
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/cuirass/iron
-	beltl = /obj/item/storage/keyring/watchman
-	beltr = /obj/item/rogueweapon/scabbard/sword
-	l_hand = /obj/item/rogueweapon/sword/short
-	gloves = /obj/item/clothing/gloves/roguetown/angle
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1)
-	var/weapontype = pickweight(list("Spear" = 5, "Bardiche" = 3, "Lucerne" = 2)) //pooors
-	switch(weapontype)
-		if("Spear")
-			r_hand = /obj/item/rogueweapon/spear
-			backl = /obj/item/rogueweapon/scabbard/gwstrap
-		if("Bardiche")
-			r_hand = /obj/item/rogueweapon/halberd
-			backl = /obj/item/rogueweapon/scabbard/gwstrap
-		if("Lucerne")
-			backl = /obj/item/rogueweapon/scabbard/gwstrap
-			r_hand = /obj/item/rogueweapon/eaglebeak/lucerne
-   H.verbs |= /mob/proc/haltyell
+	var/choices = list("Bow", "Crossbow")
+	var/chosen = browser_input_list(H, "BOW OR CROSSBOW", "FROM RANGE", choices)
+	switch(chosen)
+		if("Bow")
+			beltr = /obj/item/quiver/arrows
+			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+		if("Crossbow")
+			beltr = /obj/item/quiver/bolts
+			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
