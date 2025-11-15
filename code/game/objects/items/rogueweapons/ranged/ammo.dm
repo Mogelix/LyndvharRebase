@@ -789,7 +789,15 @@
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/sling_bullet/stone
 	icon = 'icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
-	
+
+/obj/projectile/bullet/reusable/sling_bullet/bronze
+	name = "bronze sling bullet"
+	damage = 35
+	armor_penetration = 20 //Slightly more damage, but with -33% AP.
+	ammo_type = /obj/item/ammo_casing/caseless/rogue/sling_bullet/bronze
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"	
+
 /obj/projectile/bullet/reusable/sling_bullet/aalloy
 	name = "decrepit sling bullet"
 	damage = 15 
