@@ -149,7 +149,7 @@
 
 /obj/item/clothing/neck/roguetown/chaincoif/paalloy
 	name = "ancient coif"
-	desc = "Polished gilbranze rings, linked together to form a billowing hood. Let it not be a crown of thorns that saves this dying world, but a crown of progress; of fettered metal and stained bone, rejuvenated by Zizo's will to herald Her greatest works yet."
+	desc = "Polished gilbranze rings, linked together to form a billowing hood."
 	icon_state = "achaincoif"
 	smeltresult = /obj/item/ingot/aaslag
 
@@ -343,7 +343,7 @@
 
 /obj/item/clothing/neck/roguetown/gorget/paalloy
 	name = "ancient gorget"
-	desc = "Polished gilbranze plates, layered atop one-another to guard the neck. The spine; a sacred leyline between spirit and sinew. It must remain unsevered, lest Her blessings be lost."
+	desc = "Polished gilbranze plates, layered atop one-another to guard the neck."
 	icon_state = "ancientgorget"
 	max_integrity = ARMOR_INT_SIDE_STEEL
 	smeltresult = /obj/item/ingot/aaslag
