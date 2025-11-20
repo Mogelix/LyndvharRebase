@@ -510,7 +510,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 				mechanics_result_str += " - " + line + "\n"
 			mechanics_result_str += "</details>"
 			result += mechanics_result_str
-		to_chat(src, usr.client.prefs.no_examine_blocks ? result.Join("\n") : examine_block(result.Join("\n")))
+		to_chat(src, result.Join("\n"))
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 ///Can this mob resist (default FALSE)

@@ -129,7 +129,7 @@
 	for(var/atom/movable/AM as anything in contained_items)
 		targets[AM.name] = AM
 
-	var/selected_name = tgui_input_list(user, "Which item would you like to take out of the cart?", name, targets)
+	var/selected_name = browser_input_list(user, "Which item would you like to take out of the cart?", name, targets)
 	if(!selected_name)
 		return
 
