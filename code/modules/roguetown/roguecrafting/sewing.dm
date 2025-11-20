@@ -661,6 +661,14 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
+/datum/crafting_recipe/roguetown/sewing/jupon_short
+	name = "short jupon"
+	category = "Cloaks"
+	result = list(/obj/item/clothing/cloak/stabard/surcoat/short)
+	reqs = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
+
 /datum/crafting_recipe/roguetown/sewing/cotehardie
 	name = "fitted coat"
 	result = list(/obj/item/clothing/cloak/cotehardie)

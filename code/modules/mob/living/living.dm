@@ -630,8 +630,6 @@
 				if(I.grabbed == pulling)
 					dropItemToGround(I, silent = FALSE)
 	reset_offsets("pulledby")
-	reset_pull_offsets(src)
-
 	. = ..()
 
 	update_pull_movespeed()
@@ -1177,11 +1175,13 @@
 		remove_status_effect(/datum/status_effect/compliance)
 		if(notifyme)
 			to_chat(src, span_info("I will struggle against grabs as usual."))
+		return
 	else
 		src.compliance = 1
 		apply_status_effect(/datum/status_effect/compliance)
 		if(notifyme)
 			to_chat(src, span_info("I will allow all grabs and resistance attempts by others."))
+		return
 
 
 /mob/proc/stop_attack(message = FALSE)
